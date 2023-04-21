@@ -8,7 +8,7 @@ export default function Home() {
         <title>Find buyer | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Hello MMD</h1>
+        <h1 className={styles.headline}>Hello TESA</h1>
         <div className={styles.content}>
           <p>
             To get started, edit <code>pages/index.js</code> and save to reload.
