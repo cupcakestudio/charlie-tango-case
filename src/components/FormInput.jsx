@@ -1,34 +1,35 @@
-// import styles from "./Home.module.css";
-
+ import styles from "src/pages/Home.module.css";
 export function FormInput() {
 
   return (
     <>
-    <h1>Form Input</h1>
+    <h1 className={styles.headline}>Form Input</h1>
   {/*  redirects to new div */}
-   <form action="#" method="GET" id="FormEstateInfo"> 
-   <label for="Price">
-      <span>Price</span>
-      <input name="Price" id="Price" required />
+   <section className={styles.formBackground}>
+    <form className={styles.form} action="#" method="GET" id="FormEstateInfo"> 
+   <label className={styles.label} htmlFor="Price">
+      
+      <input  name="Price" id="Price" placeholder="Price" required />
     </label>
-   <label for="EstateType">
-      <span>Estate Type</span>
-      <input name="Estate Type" type="dropdown" id="EstateType"required />
+   <label htmlFor="EstateType">
+   
+      <input name="Estate Type" type="dropdown" placeholder="Estate Type" id="EstateType"required />
     </label>
-   <label for="Size">
-      <span>Size in m^2</span>
-      <input name="Size in m^2" id="Size"required />
+    <div className={styles.size_zip}>
+   <label htmlFor="Size">
+    
+      <input name="Size in m^2" id="Size" placeholder="Size in m^2" size="4" required />
     </label>
-   <label for="zipCode">
-      <span>Zip Code</span>
-      <input name="zipCode" id="zipCode"required />
+   <label htmlFor="zipCode">
+  
+      <input name="zipCode" id="zipCode" placeholder="Zip code" required />
     </label>
-     <label for="Specifications">
-      <span>Specifications</span>
-      <input name="Specifications" id="Specifications" required />
+    </div>
+     <label  htmlFor="Specifications">
+      <input className={styles.textbox} name="Specifications" id="Specifications" placeholder="Specifications" required />
     </label>
     <button>Submit</button>
-  </form>
+  </form></section>
   </>
   );
 }
