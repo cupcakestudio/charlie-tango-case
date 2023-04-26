@@ -48,3 +48,50 @@ body {
   padding: 0 1rem;
   margin: 0 auto;
 }
+
+/********** CSS til landingpage *************/
+.main_landing {
+  place-content: center;
+  display: grid;
+  padding: 2rem;
+}
+
+.header_landing {
+  border: 1px solid black;
+  width: 100%;
+  height: 300px;
+}
+.grid_col {
+  background-color: #bbc8d7;
+  width: 400px;
+  height: 400px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+.grid_col2 {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+/* IPAD & DESKTOP */
+@media screen and (min-width: 768px) {
+  .main_landing {
+    padding: 0px;
+    display: flex;
+  }
+
+  .grid_col2 {
+    display: grid;
+    place-content: center;
+    width: 500px;
+    height: 400px;
+  }
+
+  .grid_col {
+    width: 500px;
+    height: 400px;
+  }
+}

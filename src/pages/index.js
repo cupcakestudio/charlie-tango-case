@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "./Home.module.css";
+import { Landingpage } from "@/components/Header/landingpage";
 
 export default function Home() {
   return (
@@ -7,6 +8,9 @@ export default function Home() {
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
+      <section>
+        <Landingpage></Landingpage>
+      </section>
       <div className="wrapper">
         <h1 className={styles.headline}>Hello TESA</h1>
         <div className={styles.content}>
