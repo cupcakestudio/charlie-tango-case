@@ -8,10 +8,12 @@ export function FormthankYou() {
     
       <h1 className={styles.headline}>Thnak you</h1>
           <p className="thankYouText">We will be in touch within 2-3 working days</p>
-          <button className="thankYouLink">
-            <a className="a_link" href="#">Back to EDC &#8594;</a>
-          </button>
-        
+          <div className="button_thankYou">
+          <button
+            className={styles.button}>Back to EDC
+            <a href="https://www.edc.dk/"></a>
+            </button>
+         </div>
       </article>
       </section>
     

@@ -87,11 +87,10 @@ body {
   font-size: 2rem;
 }
 
-/* styling af link tekst i knap */
-.a_link {
-  color: white;
-  text-decoration: none;
+.button_thankYou{
+  text-align: center;
 }
+
 
 /* IPAD & DESKTOP */
 @media screen and (min-width: 768px) {
