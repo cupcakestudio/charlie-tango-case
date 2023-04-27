@@ -77,6 +77,22 @@ body {
   padding: 2rem;
 }
 
+/* thank you card styling */
+.thankYouSection {
+  padding-block: 6rem;
+}
+
+.thankYouText {
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* styling af link tekst i knap */
+.a_link {
+  color: white;
+  text-decoration: none;
+}
+
 /* IPAD & DESKTOP */
 @media screen and (min-width: 768px) {
   .main_landing {
@@ -95,5 +111,12 @@ body {
     width: 500px;
     height: 400px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .potentialWrapper {
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
   }
 }
