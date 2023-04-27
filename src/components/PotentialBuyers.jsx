@@ -3,7 +3,7 @@ export function PotentialBuyers() {
   return (
     <>
       <h1 className={styles.headline}>Potential buyers</h1>
-      <div className="potentialWrapper">
+      <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
             <p>Select your matches </p>

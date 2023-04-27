@@ -71,6 +71,7 @@
 .potential_container {
   text-align: center;
 }
+
 .potential_grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -81,6 +82,13 @@
 .potential_cards {
   width: 20rem;
   background-color: white;
+}
+
+.potentialWrapper {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
 }
 
 @media (min-width: 640px) {
