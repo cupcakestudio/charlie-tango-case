@@ -54,14 +54,16 @@
   margin-bottom: 1rem;
 }
 
-.form button {
+.form button,
+.button {
   padding: 1rem;
   background: var(--blue);
   color: var(--white);
   border-radius: 3rem;
   width: 10rem;
 }
-.form button:hover {
+.form button:hover,
+.button:hover {
   background: var(--hover);
   cursor: pointer;
 }
