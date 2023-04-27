@@ -1,3 +1,5 @@
+import Anchor from "../Anchor";
+
 export function Landingpage() {
   return (
     <section>
@@ -11,7 +13,7 @@ export function Landingpage() {
             at maiores dolorum incidunt, expedita nisi aut inventore ducimus
             fugiat quaerat.
           </p>
-          <a href="#">Find a buyer &#8594;</a>
+          <Anchor href="FormInput">Find a buyer &#8594;</Anchor>;
         </div>
         <div className="grid_col2">
           <h2>Criterias for finding buyers</h2>
