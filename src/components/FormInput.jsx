@@ -1,4 +1,4 @@
- import styles from "src/pages/Home.module.css";
+import styles from "src/pages/Home.module.css";
 export function FormInput() {
 
   return (
