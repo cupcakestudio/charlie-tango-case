@@ -77,13 +77,22 @@ body {
   padding: 2rem;
 }
 
-
-.container{
-  display: grid;
-  padding: 4rem;
-  gap:1rem;
-  justify-items: center;
+/* thank you card styling */
+.thankYouSection{
+  padding-block: 6rem;
 }
+
+.thankYouText{
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* styling af link tekst i knap */
+.a_link{
+  color: white;
+  text-decoration: none;
+}
+
 
 /* IPAD & DESKTOP */
 @media screen and (min-width: 768px) {
