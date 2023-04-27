@@ -1,7 +1,6 @@
 import Head from "next/head";
-import styles from "src/pages/Home.module.css";
 import { FormInput } from "./FormInput";
-import { PotentialBuyers } from "./Header/Potential";
+import { PotentialBuyers } from "./PotentialBuyers";
 export default function FormCard() {
   return (
     <>
