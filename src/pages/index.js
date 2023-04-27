@@ -4,11 +4,13 @@ import { Landingpage } from "@/components/Landingpage";
 import FormCard from "@/components/FormCard";
 import { FormthankYou } from "@/components/FormthankYou";
 import { useState } from "react";
+
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
   return (
     <>
+     
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
