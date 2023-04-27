@@ -1,16 +1,14 @@
 import Head from "next/head";
 import { FormInput } from "./FormInput";
-import { PotentialBuyers } from "./PotentialBuyers";
-export default function FormCard() {
+export default function FormCard(props) {
   return (
     <>
       <Head>
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-        <FormInput />
+        <FormInput setPage={props.setPage}/>
       </div>
-      <PotentialBuyers />
     </>
   );
 }

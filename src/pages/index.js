@@ -4,6 +4,8 @@ import { Landingpage } from "@/components/Landingpage";
 import FormCard from "@/components/FormCard";
 import { FormthankYou } from "@/components/FormthankYou";
 import { useState } from "react";
+import { PotentialBuyers } from "@/components/PotentialBuyers";
+import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
@@ -19,7 +21,9 @@ export default function Home() {
       ) : null}
 
       {/* definere en state til denne side*/}
-      {page === "yourEstate" ? <FormCard /> : null}
+      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
+      {page === "potentialBuyerView" ? <PotentialBuyers /> : null}
+      {page === "ContactEDC" ? <ContactForm /> : null}
     </>
   );
 }

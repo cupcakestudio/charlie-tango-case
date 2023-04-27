@@ -1,5 +1,5 @@
 import styles from "src/pages/Home.module.css";
-export function FormInput() {
+export function FormInput(props) {
   return (
     <>
       <h1 className={styles.headline}>Form Input</h1>
@@ -51,7 +51,7 @@ export function FormInput() {
               required
             />
           </label>
-          <button>Submit</button>
+          <button onSubmit={() => props.setPage("potentialBuyerView")}>Next</button>
         </form>
       </section>
     </>
