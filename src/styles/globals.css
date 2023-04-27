@@ -49,3 +49,10 @@ body {
   margin: 0 auto;
   margin-bottom: 6rem;
 }
+
+.potentialWrapper {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
