@@ -22,13 +22,12 @@
 .formBackground {
   background-color: var(--dusty-blue-lighter);
   box-shadow: 2px 2px 8px 0px;
+  padding: 4rem;
 }
 .form {
-  padding: 4rem;
   display: grid;
   gap: 1rem;
   /* max-width: 100%; */
-
   justify-items: center;
 }
 
@@ -68,7 +67,24 @@
   cursor: pointer;
 }
 
+/* POTENTIAL BUYERS */
+.potential_container {
+  text-align: center;
+}
+.potential_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  place-items: center;
+}
+
+.potential_cards {
+  width: 20rem;
+  background-color: white;
+}
+
 @media (min-width: 640px) {
+  /* YOUR ESTATE */
   .size_zip {
     display: flex;
     justify-content: space-between;
@@ -78,5 +94,11 @@
   .size_zip input {
     width: 9.5rem;
     margin-bottom: 0;
+  }
+
+  /* POTENTIAL BUYERS */
+
+  .potential_container {
+    text-align: center;
   }
 }
