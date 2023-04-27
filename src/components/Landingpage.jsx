@@ -1,4 +1,5 @@
-export function Landingpage() {
+import styles from "@/pages/Home.module.css";
+export function Landingpage(props) {
   return (
     <section>
       <header className="header_landing"></header>
@@ -11,7 +12,13 @@ export function Landingpage() {
             at maiores dolorum incidunt, expedita nisi aut inventore ducimus
             fugiat quaerat.
           </p>
-          <a href="#">Find a buyer &#8594;</a>
+          <button
+            className={styles.button}
+            /* props henter indholdet ind til component og sætter page til et nyt state */
+            onClick={() => props.setPage("yourEstate")}
+          >
+            Find a buyer
+          </button>
         </div>
         <div className="grid_col2">
           <h2>Criterias for finding buyers</h2>
