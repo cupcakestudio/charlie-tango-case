@@ -1,5 +1,15 @@
 import styles from "src/pages/Home.module.css";
 export function FormInput(props) {
+
+
+  function onSubmitPotentialBuyer(e){
+    e.preventDefault();
+    changePage(); 
+  }
+  //change page state to potentialBuyers
+  function changePage(){
+    props.setPage("potentialBuyerView")
+  }
   return (
     <>
       <h1 className={styles.headline}>Form Input</h1>
@@ -10,6 +20,7 @@ export function FormInput(props) {
           action="#"
           method="GET"
           id="FormEstateInfo"
+           onSubmit={onSubmitPotentialBuyer}
         >
           <label className={styles.label} htmlFor="Price">
             <input name="Price" id="Price" placeholder="Price" required />
@@ -51,7 +62,7 @@ export function FormInput(props) {
               required
             />
           </label>
-          <button onSubmit={() => props.setPage("potentialBuyerView")}>Next</button>
+          <button type="submit">Next</button>
         </form>
       </section>
     </>
