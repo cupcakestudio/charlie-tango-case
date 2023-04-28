@@ -26,7 +26,9 @@ export default function Home() {
       {page === "yourEstate" ? (
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
-      {page === "potentialBuyerView" ? <PotentialBuyers /> : null}
+      {page === "potentialBuyerView" ? (
+        <PotentialBuyers sellerData={sellerData} />
+      ) : null}
       {page === "ContactEDC" ? <ContactForm /> : null}
     </>
   );

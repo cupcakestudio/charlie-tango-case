@@ -16,7 +16,7 @@ function toNearestHundredThousand(number) {
  * Feel free to adjust this date to fit your needs.
  */
 export function generateBuyerProfile({
-  price = { setSellerData },
+  price = 3000000,
   size = 500,
   estateTypeIndex,
 } = {}) {

@@ -3,7 +3,11 @@ export function FormInput(props) {
   function onSubmitPotentialBuyer(e) {
     e.preventDefault();
     props.setSellerData({
-      price: e.target.elements.Price.value,
+      price: e.target.elements.price.value,
+      estateType: e.target.elements.estateType.value,
+      size: e.target.elements.size.value,
+      zipCode: e.target.elements.zipCode.value,
+      specifications: e.target.elements.specifications.value,
     });
     changePage();
   }
@@ -24,11 +28,11 @@ export function FormInput(props) {
           onSubmit={onSubmitPotentialBuyer}
         >
           <label className={styles.label} htmlFor="Price">
-            <input name="Price" id="Price" placeholder="Price" required />
+            <input name="price" id="Price" placeholder="Price" required />
           </label>
           <label htmlFor="EstateType">
             <input
-              name="Estate Type"
+              name="estateType"
               type="dropdown"
               placeholder="Estate Type"
               id="EstateType"
@@ -39,7 +43,7 @@ export function FormInput(props) {
             <label htmlFor="Size">
               <input
                 className={styles.size}
-                name="Size in m^2"
+                name="size"
                 id="Size"
                 placeholder="Size in m^2"
                 required
@@ -57,7 +61,7 @@ export function FormInput(props) {
           <label htmlFor="Specifications">
             <textarea
               className={styles.textbox}
-              name="Specifications"
+              name="specifications"
               id="Specifications"
               placeholder="Specifications"
               required

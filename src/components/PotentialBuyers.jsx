@@ -1,10 +1,12 @@
 import styles from "src/pages/Home.module.css";
 import { BuyerCard } from "./BuyerCard";
 import { useEffect, useState } from "react";
-export function PotentialBuyers() {
+export function PotentialBuyers(props) {
   const [potentialBuyer, setpotentialBuyer] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/api/find-buyers`)
+    fetch(
+      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setpotentialBuyer(data);
