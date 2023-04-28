@@ -52,14 +52,18 @@ function submitToDB(e) {
     e.preventDefault();
     console.log("prevent", );
     // setSellerInfoState((oldstate) => oldstate + 1)
-console.log(formEl.current.name.value)
+// console.log(formEl.current.name.value)
     //create an object entry for supabase.
     const payload = {
-      name: "Ting",
-      email: "ting0226@stud.kea.dk"
+      name: formEl.current.name.value,
+      email: formEl.current.email.value,
+      phone: formEl.current.phone.value,
     }
-    //send request to local api for buyers before sending whole form to supabase
-    fetch("api/find-buyers", {
+    
+    console.log("sent to db");
+    //send request to local api for sellers before sending whole form to supabase
+    fetch("/api/form-filled", {
+     
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -98,21 +102,22 @@ return (  <>
               name="Email"
               type="email"
               placeholder="Email"
-              id="Email"
+              id="email"
               required
             />
           </label>
-          {/*<label className={styles.size_zip}>
-            <label htmlFor="Size">
+        
+            <label htmlFor="Phone">
               <input
                 className={styles.size}
-                name="Size in m^2"
-                id="Size"
-                placeholder="Size in m^2"
+                name="Phone"
+                id="phone"
+                placeholder="Phone:"
                 required
               />
             </label>
-            <label htmlFor="zipCode">
+            
+           {/* <label htmlFor="zipCode">
               <input
                 name="zipCode"
                 id="zipCode"
