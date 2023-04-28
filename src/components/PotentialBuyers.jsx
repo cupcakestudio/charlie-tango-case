@@ -1,4 +1,5 @@
 import styles from "src/pages/Home.module.css";
+import { BuyerCard } from "./BuyerCard";
 export function PotentialBuyers() {
   return (
     <>
@@ -10,13 +11,13 @@ export function PotentialBuyers() {
             <p>Total of matching buyers: X</p>
             <div className={styles.potential_grid}>
               <div className={styles.potential_cards}>
-                <p>hejsas</p>
+                <BuyerCard />
               </div>
               <div className={styles.potential_cards}>
-                <p>hejsas</p>
+                <BuyerCard />
               </div>
               <div className={styles.potential_cards}>
-                <p>hejsas</p>
+                <BuyerCard />
               </div>
             </div>
           </div>
