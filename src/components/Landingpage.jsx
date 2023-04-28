@@ -1,11 +1,9 @@
 import styles from "@/pages/Home.module.css";
-import App from "src/components/stepBar.jsx";
 export function Landingpage(props) {
   return (
 
     <section>
       <header className="header_landing"></header>
-      <App></App>
       <main className="main_landing">
         <div className="grid_col">
           <h2>Find potential buyers for your property</h2>
