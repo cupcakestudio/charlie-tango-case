@@ -1,19 +1,22 @@
 import Head from "next/head";
 import styles from "src/pages/Home.module.css"
 import {useContext,  useRef } from "react";
-import { formsSellerContext } from "@/contexts/FormContext";
-export default function ContactForm() {
+import { FormsSellerContext, UpdateSellerContext } from "@/contexts/FormContext";
 
+
+export default function ContactForm() {
 //const to get form, using ref to hook up the form
 const formEl = useRef(null);
-const formContext = useContext(formsSellerContext);
+const sellerInfo = useContext(FormsSellerContext);
   //get the context from the form here.
-console.log(formContext)
+const setSellerInfoState = useContext(UpdateSellerContext);
+console.log(setSellerInfoState);
 
 function submitToDB(e) {
     e.preventDefault();
-    console.log("prevent");
-
+    console.log("prevent", );
+    setSellerInfoState((oldstate) => oldstate + 1)
+console.log(formEl.current.name.value)
     //create an object entry for supabase.
     const payload = {
       name: "Ting",
@@ -26,7 +29,7 @@ return (  <>
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1>YOYO</h1>
+      <h1>This is a sellers house: {sellerInfo}</h1>
         <h1 className={styles.headline}>Form Input</h1>
       {/*  redirects to new div */}
       <section className={styles.formBackground}>
@@ -39,7 +42,7 @@ return (  <>
           onSubmit={submitToDB}
         >
           <label className={styles.label} htmlFor="Price">
-            <input name="Name" id="Name" placeholder="Name" required />
+            <input name="Name" id="name" placeholder="Name" required />
           </label>
            <label htmlFor="Email">
             <input
