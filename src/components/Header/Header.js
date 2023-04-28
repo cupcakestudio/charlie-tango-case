@@ -2,7 +2,6 @@ import logo from "@/assets/edc-logo.svg";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import Link from "next/link";
-import StepBar from "src/components/stepBar.jsx";
 
 export function Header() {
   return (
@@ -17,7 +16,6 @@ export function Header() {
           priority
         />
       </Link>
-      <StepBar activeStep="2"></StepBar>
     </header>
   );
 }

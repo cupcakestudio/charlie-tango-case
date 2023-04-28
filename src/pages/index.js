@@ -4,7 +4,6 @@ import { Landingpage } from "@/components/Landingpage";
 import FormCard from "@/components/FormCard";
 import { FormthankYou } from "@/components/FormthankYou";
 import { useState } from "react";
-
 import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
 import StepBar from "src/components/stepBar.jsx";
@@ -12,6 +11,7 @@ export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
 
+  /* funktion som tjekker siden vi er på, og sætter getActive = den aktive knap på bar efter siden*/
   function getActive() {
     if (page === "landing") {
       return 0;
