@@ -91,6 +91,25 @@
   margin-bottom: 6rem;
 }
 
+/* BUYER CARD  */
+
+.card div {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.card:hover {
+  border: solid;
+  cursor: pointer;
+}
+
+.divTakeOver {
+  border-bottom: solid;
+}
+.divEstateInfo {
+  margin-bottom: 2rem;
+}
+
 @media (min-width: 640px) {
   /* YOUR ESTATE */
   .size_zip {
