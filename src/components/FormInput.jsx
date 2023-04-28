@@ -3,6 +3,8 @@ export function FormInput(props) {
   function onSubmitPotentialBuyer(e) {
     e.preventDefault();
     props.setSellerData({
+      // tjekker input felters value (syntaks for inputfelter - e.taget.elements
+      // properties.value kommer fra input name
       price: e.target.elements.price.value,
       estateType: e.target.elements.estateType.value,
       size: e.target.elements.size.value,

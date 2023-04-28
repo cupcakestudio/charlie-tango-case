@@ -1,5 +1,6 @@
 import styles from "src/pages/Home.module.css";
 export function BuyerCard(props) {
+  // props gør vi kan bruge de taget values fra inputfelter
   return (
     <>
       <section className={styles.card}>

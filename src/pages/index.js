@@ -9,7 +9,7 @@ import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
-  // Tager formInput data og gemmer deres states, så vi videre kan bruge dem
+  // Definere state, sellerData, så vi længere nede kan sende staten videre
   const [sellerData, setSellerData] = useState({});
 
   return (
