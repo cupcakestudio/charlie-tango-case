@@ -25,7 +25,8 @@ export default function Home() {
       {page === "potentialBuyerView" ? (
         <PotentialBuyers setPage={setPage} />
       ) : null}
-      {page === "contactEDC" ? <ContactForm /> : null}
+      {page === "contactEDC" ? <ContactForm setPage={setPage} /> : null}
+      {page === "thankyou" ? <FormthankYou /> : null}
     </>
   );
 }

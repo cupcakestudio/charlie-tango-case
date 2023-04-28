@@ -4,7 +4,7 @@ import {useContext,  useRef } from "react";
 import { FormsSellerContext, UpdateSellerContext } from "@/contexts/FormContext";
 
 
-export default function ContactForm() {
+export default function ContactForm(props) {
 //const to get form, using ref to hook up the form
 const formEl = useRef(null);
 const sellerInfo = useContext(FormsSellerContext);
@@ -22,6 +22,11 @@ console.log(formEl.current.name.value)
       name: "Ting",
       formContext: "HEJSA"
     }
+    changePage();
+  }
+//change page state to Thank you state
+  function changePage(){
+    props.setPage("thankyou")
   }
   
 return (  <>
