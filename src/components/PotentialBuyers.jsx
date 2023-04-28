@@ -1,6 +1,7 @@
 import styles from "src/pages/Home.module.css";
 import { BuyerCard } from "./BuyerCard";
-export function PotentialBuyers() {
+export function PotentialBuyers(props) {
+
   return (
     <>
       <h1 className={styles.headline}>Potential buyers</h1>
@@ -21,7 +22,9 @@ export function PotentialBuyers() {
               </div>
             </div>
           </div>
+            <button className={styles.button} onClick={() => props.setPage("contactEDC")}>Next</button>
         </section>
+      
       </div>
     </>
   );
