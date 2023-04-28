@@ -9,6 +9,7 @@ import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
+  const [sellerData, setSellerData] = useState({});
   return (
     <>
       <Head>
@@ -21,11 +22,15 @@ export default function Home() {
       ) : null}
 
       {/* definere en state til denne side*/}
-      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
-      {page === "potentialBuyerView" ? (
-        <PotentialBuyers setPage={setPage} />
+      {page === "yourEstate" ? (
+        <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
-      {page === "contactEDC" ? <ContactForm setPage={setPage} /> : null}
+      {page === "potentialBuyerView" ? (
+        <PotentialBuyers setPage={setPage} sellerData={sellerData} />
+      ) : null}
+      {page === "contactEDC" ? (
+        <ContactForm setPage={setPage} sellerData={sellerData} />
+      ) : null}
       {page === "thankyou" ? <FormthankYou /> : null}
     </>
   );

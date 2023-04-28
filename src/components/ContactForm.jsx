@@ -43,15 +43,15 @@ import { FormsSellerContext, UpdateSellerContext } from "@/contexts/FormContext"
 export default function ContactForm(props) {
 //const to get form, using ref to hook up the form
 const formEl = useRef(null);
-const sellerInfo = useContext(FormsSellerContext);
-  //get the context from the form here.
-const setSellerInfoState = useContext(UpdateSellerContext);
-console.log(setSellerInfoState);
+// const sellerInfo = useContext(FormsSellerContext);
+//   //get the context from the form here.
+// const setSellerInfoState = useContext(UpdateSellerContext);
+// console.log(setSellerInfoState);
 
 function submitToDB(e) {
     e.preventDefault();
     console.log("prevent", );
-    setSellerInfoState((oldstate) => oldstate + 1)
+    // setSellerInfoState((oldstate) => oldstate + 1)
 console.log(formEl.current.name.value)
     //create an object entry for supabase.
     const payload = {
@@ -78,7 +78,7 @@ return (  <>
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-      <h1>This is a sellers house: {sellerInfo}</h1>
+      
         <h1 className={styles.headline}>Form Input</h1>
       {/*  redirects to new div */}
       <section className={styles.formBackground}>
