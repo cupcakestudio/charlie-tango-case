@@ -11,6 +11,7 @@ export default function Home() {
   const [page, setPage] = useState("landing");
   // Tager formInput data og gemmer deres states, så vi videre kan bruge dem
   const [sellerData, setSellerData] = useState({});
+
   return (
     <>
       <Head>
@@ -26,8 +27,14 @@ export default function Home() {
       {page === "yourEstate" ? (
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
+      {page === "yourEstate" ? (
+        <FormCard setPage={setPage} setSellerData={setSellerData} />
+      ) : null}
       {page === "potentialBuyerView" ? (
         <PotentialBuyers sellerData={sellerData} />
+      ) : null}
+      {page === "contactEDC" ? (
+        <ContactForm setPage={setPage} sellerData={sellerData} />
       ) : null}
       {page === "ContactEDC" ? <ContactForm /> : null}
     </>
