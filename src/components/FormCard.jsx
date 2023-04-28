@@ -7,7 +7,10 @@ export default function FormCard(props) {
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-        <FormInput setPage={props.setPage}/>
+        <FormInput
+          setPage={props.setPage}
+          setSellerData={props.setSellerData}
+        />
       </div>
     </>
   );
