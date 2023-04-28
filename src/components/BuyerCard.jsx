@@ -4,17 +4,32 @@ export function BuyerCard(props) {
     <>
       <section className={styles.card}>
         <div className={styles.divTakeOver}>
-          <p>Takeover date: {props.takeoverDate}</p>
+          <p>
+            <span>Takeover date: </span>
+            {props.takeoverDate}
+          </p>
         </div>
         <div className={styles.divEstateInfo}>
-          <p>Estate type: {props.estateType}</p>
-          <p>Min. size: {props.minSize}</p>
-          <p>Max. price: {props.maxPrice}</p>
+          <p>
+            <span>Estate type:</span> {props.estateType}
+          </p>
+          <p>
+            <span>Min. size:</span> {props.minSize}
+          </p>
+          <p>
+            <span>Max. price:</span> {props.maxPrice}
+          </p>
         </div>
         <div>
-          <p>Adults: {props.adults}</p>
-          <p>Children: {props.children}</p>
-          <p>Description: {props.description}</p>
+          <p>
+            <span> {props.adults}</span> Adults
+          </p>
+          <p>
+            <span>{props.children}</span> Children
+          </p>
+          <p>
+            <span>Description:</span> {props.description}
+          </p>
         </div>
       </section>
     </>

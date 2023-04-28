@@ -20,7 +20,7 @@ export function PotentialBuyers(props) {
       <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
-            <p>Select your matches </p>
+            <p>Select your matches</p>
             <p>Total of matching buyers: X</p>
             <div className={styles.potential_grid}>
               {potentialBuyer.map((seller) => (

@@ -50,6 +50,10 @@ body {
   margin-bottom: 6rem;
 }
 
+span {
+  font-weight: 600;
+}
+
 /********** CSS til landingpage *************/
 .main_landing {
   place-content: center;
@@ -78,7 +82,7 @@ body {
 }
 
 /* thank you card styling */
-.thankYouSection{
+.thankYouSection {
   padding: 4rem;
 }
 
