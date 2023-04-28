@@ -4,17 +4,35 @@ import { Landingpage } from "@/components/Landingpage";
 import FormCard from "@/components/FormCard";
 import { FormthankYou } from "@/components/FormthankYou";
 import { useState } from "react";
+
 import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
+import StepBar from "src/components/stepBar.jsx";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
+
+  function getActive() {
+    if (page === "landing") {
+      return 0;
+    }
+    if (page === "yourEstate") {
+      return 1;
+    }
+    if (page === "potentialBuyerView") {
+      return 2;
+    }
+    if (page === "contactEDC") {
+      return 3;
+    }
+  }
+
   return (
     <>
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
-
+      <StepBar activeStep={getActive()}></StepBar>
       {/* definere en if sætning der sætter pagen til landing som standart og bruger null til at gemme alt der ikke er = landing */}
       {page === "landing" ? (
         <Landingpage setPage={setPage}></Landingpage>
