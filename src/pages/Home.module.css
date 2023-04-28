@@ -110,6 +110,33 @@
   margin-bottom: 2rem;
 }
 
+/* DASHBOARD CONTACTS CARd  */
+.date_delete{
+  display: flex;
+  place-content: space-between;
+  margin-inline: 1rem;
+}
+
+.divContacts{
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.contactsright{
+  display: grid;
+}
+.contactsLeft{
+  display: grid;
+}
+
+.contactedCheckBox{
+  text-align: left;
+  padding-inline-start: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+
 @media (min-width: 640px) {
   /* YOUR ESTATE */
   .size_zip {

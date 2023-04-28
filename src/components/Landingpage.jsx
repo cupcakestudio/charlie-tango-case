@@ -1,6 +1,7 @@
 import styles from "@/pages/Home.module.css";
 export function Landingpage(props) {
   return (
+    
     <section>
       <header className="header_landing"></header>
       <main className="main_landing">
@@ -31,5 +32,6 @@ export function Landingpage(props) {
         </div>
       </main>
     </section>
+ 
   );
 }

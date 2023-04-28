@@ -1,30 +1,27 @@
 import styles from "src/pages/Home.module.css";
-import { BuyerCard } from "./BuyerCard";
-import { Dashboard } from "./dashboard";
-export function PotentialBuyers() {
+import { DashContactCard } from "src/components/DashContatCard.jsx";
+export function Dashboard() {
   return (
     <>
-      <h1 className={styles.headline}>Potential buyers</h1>
+      <h1 className={styles.headline}>Latest contacts</h1>
       <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
-            <p>Select your matches </p>
-            <p>Total of matching buyers: X</p>
+            <p>amount of contacts: X</p>
             <div className={styles.potential_grid}>
               <div className={styles.potential_cards}>
-                <BuyerCard />
+                <DashContactCard />
               </div>
               <div className={styles.potential_cards}>
-                <BuyerCard />
+                <DashContactCard />
               </div>
               <div className={styles.potential_cards}>
-                <BuyerCard />
+                <DashContactCard />
               </div>
             </div>
           </div>
         </section>
       </div>
-      <Dashboard></Dashboard>
     </>
   );
 }
