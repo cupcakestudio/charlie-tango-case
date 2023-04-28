@@ -1,18 +1,23 @@
 import Head from "next/head";
 import styles from "src/pages/Home.module.css"
 import {useContext,  useRef } from "react";
+import { formsSellerContext } from "@/contexts/FormContext";
 export default function ContactForm() {
 
 //const to get form, using ref to hook up the form
 const formEl = useRef(null);
-const formContext = useContext();
-  function submitToDB(e) {
+const formContext = useContext(formsSellerContext);
+  //get the context from the form here.
+console.log(formContext)
+
+function submitToDB(e) {
     e.preventDefault();
     console.log("prevent");
 
     //create an object entry for supabase.
     const payload = {
-      name: "Ting"
+      name: "Ting",
+      formContext: "HEJSA"
     }
   }
   
@@ -36,12 +41,12 @@ return (  <>
           <label className={styles.label} htmlFor="Price">
             <input name="Name" id="Name" placeholder="Name" required />
           </label>
-           <label htmlFor="EstateType">
+           <label htmlFor="Email">
             <input
-              name="Estate Type"
-              type="dropdown"
-              placeholder="Estate Type"
-              id="EstateType"
+              name="Email"
+              type="email"
+              placeholder="Email"
+              id="Email"
               required
             />
           </label>

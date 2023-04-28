@@ -22,8 +22,10 @@ export default function Home() {
 
       {/* definere en state til denne side*/}
       {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
-      {page === "potentialBuyerView" ? <PotentialBuyers /> : null}
-      {page === "ContactEDC" ? <ContactForm /> : null}
+      {page === "potentialBuyerView" ? (
+        <PotentialBuyers setPage={setPage} />
+      ) : null}
+      {page === "contactEDC" ? <ContactForm /> : null}
     </>
   );
 }
