@@ -9,6 +9,8 @@ import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
+  // Tager formInput data og gemmer deres states, så vi videre kan bruge dem
+  const [sellerData, setSellerData] = useState({});
   return (
     <>
       <Head>
@@ -21,7 +23,9 @@ export default function Home() {
       ) : null}
 
       {/* definere en state til denne side*/}
-      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
+      {page === "yourEstate" ? (
+        <FormCard setPage={setPage} setSellerData={setSellerData} />
+      ) : null}
       {page === "potentialBuyerView" ? <PotentialBuyers /> : null}
       {page === "ContactEDC" ? <ContactForm /> : null}
     </>
