@@ -55,7 +55,7 @@ function submitToDB(e) {
 // console.log(formEl.current.name.value)
     //create an object entry for supabase.
     const payload = {
-      name: formEl.current.name.value,
+      fullname: formEl.current.name.value,
       email: formEl.current.email.value,
       phone: formEl.current.phone.value,
     }
@@ -71,8 +71,9 @@ function submitToDB(e) {
             body: JSON.stringify(payload),
           }).then(res=> res.json()).then(data=> console.log(data))
 
-
+changePage();
 }
+
 //change page state to Thank you state
   function changePage(){
     props.setPage("thankyou")
