@@ -1,5 +1,10 @@
 import styles from "src/pages/Home.module.css";
+import { estateTypes } from "@/data/estateTypes";
+import { useState } from "react";
+
 export function FormInput(props) {
+  const [selectedEstateType, setSelectedEstateType] = useState("");
+
   function onSubmitPotentialBuyer(e) {
     e.preventDefault();
     props.setSellerData({
@@ -15,6 +20,12 @@ export function FormInput(props) {
   function changePage() {
     props.setPage("potentialBuyerView");
   }
+
+  /* handles the etstateType chance */
+  function handleEstateTypeChange(e) {
+    setSelectedEstateType(e.target.value);
+  }
+
   return (
     <>
       <h1 className={styles.headline}>Form Input</h1>
@@ -31,13 +42,15 @@ export function FormInput(props) {
             <input name="price" id="Price" placeholder="Price" required />
           </label>
           <label htmlFor="EstateType">
-            <input
-              name="estateType"
-              type="dropdown"
-              placeholder="Estate Type"
-              id="EstateType"
-              required
-            />
+            {/* Dropdown */}
+            <select name="estateType" id="EstateType">
+              <option value="">Select estate type</option>
+              {estateTypes.map((estateType) => (
+                <option key={estateType.id} value={estateType.name}>
+                  {estateType.name}
+                </option>
+              ))}
+            </select>
           </label>
           <label className={styles.size_zip}>
             <label htmlFor="Size">
@@ -55,6 +68,8 @@ export function FormInput(props) {
                 id="zipCode"
                 placeholder="Zip code"
                 required
+                minLength="4"
+                maxength="4"
               />
             </label>
           </label>
