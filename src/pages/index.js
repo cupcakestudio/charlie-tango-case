@@ -29,18 +29,6 @@ export default function Home() {
     }
   }
 
-  function handleNext() {
-    if (page === "landing") {
-      setPage("yourEstate");
-    } else if (page === "yourEstate") {
-      setPage("potentialBuyerView");
-    } else if (page === "potentialBuyerView") {
-      setPage("contactEDC");
-    } else if (page === "contactEDC") {
-      setPage("thankyou");
-    }
-  }
-
   function handleBack() {
     if (page === "yourEstate") {
       setPage("landing");
@@ -61,10 +49,7 @@ export default function Home() {
       <StepBar activeStep={getActive()} />
       <div className={styles.back_next_buttons}>
         <button className={styles.button_back_next} onClick={handleBack}>
-          back{" "}
-        </button>
-        <button className={styles.button_back_next} onClick={handleNext}>
-          Forward{" "}
+          Back{" "}
         </button>
       </div>
       {page === "landing" ? <Landingpage setPage={setPage} /> : null}
