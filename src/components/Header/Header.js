@@ -17,7 +17,6 @@ export function Header() {
           priority
         />
       </Link>
-      <StepBar></StepBar>
     </header>
   );
 }
