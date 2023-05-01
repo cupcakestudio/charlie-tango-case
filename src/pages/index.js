@@ -8,9 +8,14 @@ import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
-  const [page, setPage] = useState("landing");
+  const [page, setPage] = useState("potentialBuyerView");
   // Definere state, sellerData, så vi længere nede kan sende staten videre
-  const [sellerData, setSellerData] = useState({});
+  const [sellerData, setSellerData] = useState({
+    price: 5000000,
+    zipCode: 2000,
+    estateType: 1,
+    buyers: [],
+  });
 
   return (
     <>
@@ -28,7 +33,11 @@ export default function Home() {
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
       {page === "potentialBuyerView" ? (
-        <PotentialBuyers setPage={setPage} sellerData={sellerData} />
+        <PotentialBuyers
+          setPage={setPage}
+          sellerData={sellerData}
+          setSellerData={setSellerData}
+        />
       ) : null}
       {page === "contactEDC" ? (
         <ContactForm setPage={setPage} sellerData={sellerData} />

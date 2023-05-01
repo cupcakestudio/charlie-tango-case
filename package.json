@@ -12,7 +12,10 @@
     "proseWrap": "always"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@faker-js/faker": "^7.6.0",
+    "@mui/material": "^5.12.2",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"

@@ -3,6 +3,18 @@ import { priceFormatter } from "@/data/buyerProfiles";
 import { estateTypes } from "@/data/estateTypes";
 export function BuyerCard(props) {
   // props gør vi kan bruge de taget values fra inputfelter
+  function toggleBuyer() {
+    props.setSellerData((prev) => {
+      if (prev.buyers.find((id) => id === props.id)) {
+        //hvis props.id findes in sellerdata så skal den væk
+        console.log("fandt id, den skal bæk");
+        return { ...prev, buyers: prev.buyers.filter((id) => id !== props.id) };
+      } else {
+        //ellers skal den ind
+        return { ...prev, buyers: prev.buyers.concat(props.id) };
+      }
+    });
+  }
   return (
     <>
       <section className={styles.card}>
@@ -34,6 +46,16 @@ export function BuyerCard(props) {
             <span>Description:</span> {props.description}
           </p>
         </div>
+        <button
+          className={
+            props.sellerData.buyers.includes(props.id)
+              ? styles.selected
+              : styles.selectButton
+          }
+          onClick={toggleBuyer}
+        >
+          Select
+        </button>
       </section>
     </>
   );

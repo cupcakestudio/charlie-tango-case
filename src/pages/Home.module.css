@@ -103,6 +103,15 @@
 
 /* BUYER CARD  */
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card button {
+  margin-top: auto;
+}
+
 .card div {
   text-align: left;
   padding-inline: 1rem;
@@ -117,6 +126,18 @@
 }
 .divEstateInfo {
   margin-bottom: 2rem;
+}
+
+.selectButton {
+  place-content: center;
+  display: flex;
+  background-color: #e5e5e5;
+}
+
+.selectButton:hover,
+.selected {
+  background-color: var(--blue);
+  color: white;
 }
 
 /* styling af dropdown */
