@@ -1,5 +1,5 @@
 import styles from "src/pages/Home.module.css";
-export function DashContactCard() {
+export function DashCard() {
   return (
     <>
       <section className={styles.card}>
