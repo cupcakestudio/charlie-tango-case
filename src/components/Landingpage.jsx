@@ -1,4 +1,5 @@
 import styles from "@/pages/Home.module.css";
+import HorizontalLinearStepper from "src/components/stepBar.jsx";
 export function Landingpage(props) {
   return (
 
@@ -16,7 +17,7 @@ export function Landingpage(props) {
           <button
             className={styles.button}
             /* props henter indholdet ind til component og sætter page til et nyt state */
-            onClick={() => props.setPage("yourEstate")}
+            onClick={() => {props.setPage("yourEstate");}}
           >
             Find a buyer
           </button>
@@ -34,3 +35,5 @@ export function Landingpage(props) {
     </section>
   );
 }
+
+ 

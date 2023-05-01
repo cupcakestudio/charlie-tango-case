@@ -6,11 +6,53 @@ import { FormthankYou } from "@/components/FormthankYou";
 import { useState } from "react";
 import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
+import StepBar from "src/components/stepBar.jsx";
+
 export default function Home() {
-  /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
   // Definere state, sellerData, så vi længere nede kan sende staten videre
   const [sellerData, setSellerData] = useState({});
+
+
+  //function der returnerer på hver pagenav menuens værdier
+  function getActive() {
+    if (page === "landing") {
+      return 0;
+    }
+    if (page === "yourEstate") {
+      return 1;
+    }
+    if (page === "potentialBuyerView") {
+      return 2;
+    }
+    if (page === "contactEDC") {
+      return 3;
+    }
+  }
+
+  function handleNext() {
+    if (page === "landing") {
+      setPage("yourEstate");
+    } else if (page === "yourEstate") {
+      setPage("potentialBuyerView");
+    } else if (page === "potentialBuyerView") {
+      setPage("contactEDC");
+    } else if (page === "contactEDC") {
+      setPage("thankyou");
+    }
+  }
+
+  function handleBack() {
+    if (page === "yourEstate") {
+      setPage("landing");
+    } else if (page === "potentialBuyerView") {
+      setPage("yourEstate");
+    } else if (page === "contactEDC") {
+      setPage("potentialBuyerView");
+    } else if (page === "thankyou") {
+      setPage("contactEDC");
+    }
+  }
 
   return (
     <>
@@ -18,16 +60,17 @@ export default function Home() {
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
-
-      {/* definere en if sætning der sætter pagen til landing som standart og bruger null til at gemme alt der ikke er = landing */}
-      {page === "landing" ? (
-        <Landingpage setPage={setPage}></Landingpage>
-      ) : null}
-
-      {/* definere en state til denne side*/}
-      {page === "yourEstate" ? (
-        <FormCard setPage={setPage} setSellerData={setSellerData} />
-      ) : null}
+      <StepBar activeStep={getActive()} />
+      <div className={styles.back_next_buttons}>
+        <button className={styles.button_back_next} onClick={handleNext}>
+          Forward{" "}
+        </button>
+        <button className={styles.button_back_next} onClick={handleBack}>
+          back{" "}
+        </button>
+      </div>
+      {page === "landing" ? <Landingpage setPage={setPage} /> : null}
+      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
       {page === "potentialBuyerView" ? (
         <PotentialBuyers setPage={setPage} sellerData={sellerData} />
       ) : null}
@@ -35,6 +78,7 @@ export default function Home() {
         <ContactForm setPage={setPage} sellerData={sellerData} />
       ) : null}
       {page === "thankyou" ? <FormthankYou /> : null}
+      <div style={{ display: "flex", justifyContent: "space-between" }}></div>
     </>
   );
 }
