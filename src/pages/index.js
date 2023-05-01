@@ -22,12 +22,8 @@ export default function Home() {
       {page === "landing" ? (
         <Landingpage setPage={setPage}></Landingpage>
       ) : null}
-      <FormthankYou></FormthankYou>
 
       {/* definere en state til denne side*/}
-      {page === "yourEstate" ? (
-        <FormCard setPage={setPage} setSellerData={setSellerData} />
-      ) : null}
       {page === "yourEstate" ? (
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
@@ -37,7 +33,7 @@ export default function Home() {
       {page === "contactEDC" ? (
         <ContactForm setPage={setPage} sellerData={sellerData} />
       ) : null}
-      {page === "ContactEDC" ? <ContactForm /> : null}
+      {page === "thankyou" ? <FormthankYou /> : null}
     </>
   );
 }
