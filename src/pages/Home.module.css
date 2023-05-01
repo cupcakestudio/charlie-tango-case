@@ -85,6 +85,7 @@
   grid-gap: 2rem;
   place-items: center;
   grid-auto-rows: max-content;
+  margin-block: 3rem;
 }
 
 .potential_cards {
@@ -100,12 +101,11 @@
   margin-bottom: 6rem;
 }
 
-
 /* BUYER CARD  */
 
 .card div {
   text-align: left;
-  padding-left: 1rem;
+  padding-inline: 1rem;
 }
 
 .card:hover {

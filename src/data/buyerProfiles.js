@@ -1,7 +1,7 @@
 import { estateTypes } from "@/data/estateTypes";
 import { faker } from "@faker-js/faker";
 
-const priceFormatter = new Intl.NumberFormat("da-DK", {
+export const priceFormatter = new Intl.NumberFormat("da-DK", {
   currency: "DKK",
   style: "currency",
   maximumFractionDigits: 0,

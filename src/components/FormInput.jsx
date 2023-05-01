@@ -1,10 +1,7 @@
 import styles from "src/pages/Home.module.css";
 import { estateTypes } from "@/data/estateTypes";
-import { useState } from "react";
 
 export function FormInput(props) {
-  const [selectedEstateType, setSelectedEstateType] = useState("");
-
   function onSubmitPotentialBuyer(e) {
     e.preventDefault();
     props.setSellerData({
@@ -15,17 +12,13 @@ export function FormInput(props) {
       size: e.target.elements.size.value,
       zipCode: e.target.elements.zipCode.value,
       specifications: e.target.elements.specifications.value,
+      buyers: [],
     });
     changePage();
   }
   //change page state to potentialBuyers
   function changePage() {
     props.setPage("potentialBuyerView");
-  }
-
-  /* handles the etstateType chance */
-  function handleEstateTypeChange(e) {
-    setSelectedEstateType(e.target.value);
   }
 
   return (
@@ -48,7 +41,7 @@ export function FormInput(props) {
             <select name="estateType" id="EstateType">
               <option value="">Select estate type</option>
               {estateTypes.map((estateType) => (
-                <option key={estateType.id} value={estateType.name}>
+                <option key={estateType.id} value={estateType.id - 1}>
                   {estateType.name}
                 </option>
               ))}
