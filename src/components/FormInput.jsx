@@ -23,7 +23,7 @@ export function FormInput(props) {
 
   return (
     <>
-      <h1 className={styles.headline}>Form Input</h1>
+      <h1 className={styles.headline}>About your estate</h1>
       {/*  redirects to new div */}
       <section className={styles.formBackground}>
         <form

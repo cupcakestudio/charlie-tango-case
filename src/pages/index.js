@@ -53,7 +53,9 @@ export default function Home() {
         </button>
       </div>
       {page === "landing" ? <Landingpage setPage={setPage} /> : null}
-      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
+      {page === "yourEstate" ? (
+        <FormCard setPage={setPage} setSellerData={setSellerData} />
+      ) : null}
       {page === "potentialBuyerView" ? (
         <PotentialBuyers setPage={setPage} sellerData={sellerData} />
       ) : null}
