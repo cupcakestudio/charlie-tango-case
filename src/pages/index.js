@@ -31,7 +31,7 @@ export default function Home() {
         <PotentialBuyers setPage={setPage} sellerData={sellerData} />
       ) : null}
       {page === "contactEDC" ? (
-        <ContactForm setPage={setPage} setSellerData={setSellerData} />
+        <ContactForm setPage={setPage} sellerData={sellerData} />
       ) : null}
       {page === "thankyou" ? <FormthankYou /> : null}
     </>
