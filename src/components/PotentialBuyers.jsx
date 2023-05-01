@@ -6,7 +6,7 @@ export function PotentialBuyers(props) {
   useEffect(() => {
     fetch(
       // fetcher api med props og læser state data (sellerData)
-      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateTypeIndex=${props.sellerData.estateTypeIndex}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
     )
       .then((res) => res.json())
       .then((data) => {
