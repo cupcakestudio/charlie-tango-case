@@ -67,6 +67,24 @@
   cursor: pointer;
 }
 
+.back_next_buttons{
+  display: flex;
+  place-content: space-between;
+  margin-inline: 30px;
+}
+
+.button_back_next{
+ 
+  background: none;
+  color: var(--blue);
+  font-size: 1.1rem;
+ 
+}
+.button_back_next:hover{
+text-decoration: underline;
+  cursor: pointer;
+}
+
 /* POTENTIAL BUYERS */
 .potential_container {
   text-align: center;

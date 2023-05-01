@@ -7,11 +7,11 @@ import { useState } from "react";
 import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
 import StepBar from "src/components/stepBar.jsx";
+
 export default function Home() {
-  /* konstanten page tjekker hvilken side vi er på med useState */
   const [page, setPage] = useState("landing");
 
-  /* funktion som tjekker siden vi er på, og sætter getActive = den aktive knap på bar efter siden*/
+  //function der returnerer på hver pagenav menuens værdier
   function getActive() {
     if (page === "landing") {
       return 0;
@@ -27,24 +27,52 @@ export default function Home() {
     }
   }
 
+  function handleNext() {
+    if (page === "landing") {
+      setPage("yourEstate");
+    } else if (page === "yourEstate") {
+      setPage("potentialBuyerView");
+    } else if (page === "potentialBuyerView") {
+      setPage("contactEDC");
+    } else if (page === "contactEDC") {
+      setPage("thankyou");
+    }
+  }
+
+  function handleBack() {
+    if (page === "yourEstate") {
+      setPage("landing");
+    } else if (page === "potentialBuyerView") {
+      setPage("yourEstate");
+    } else if (page === "contactEDC") {
+      setPage("potentialBuyerView");
+    } else if (page === "thankyou") {
+      setPage("contactEDC");
+    }
+  }
+
   return (
     <>
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
-      <StepBar activeStep={getActive()}></StepBar>
-      {/* definere en if sætning der sætter pagen til landing som standart og bruger null til at gemme alt der ikke er = landing */}
-      {page === "landing" ? (
-        <Landingpage setPage={setPage}></Landingpage>
-      ) : null}
-
-      {/* definere en state til denne side*/}
+      <StepBar activeStep={getActive()} />
+      <div className={styles.back_next_buttons}>
+        <button className={styles.button_back_next} onClick={handleNext}>
+          Forward{" "}
+        </button>
+        <button className={styles.button_back_next} onClick={handleBack}>
+          back{" "}
+        </button>
+      </div>
+      {page === "landing" ? <Landingpage setPage={setPage} /> : null}
       {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
       {page === "potentialBuyerView" ? (
         <PotentialBuyers setPage={setPage} />
       ) : null}
       {page === "contactEDC" ? <ContactForm setPage={setPage} /> : null}
       {page === "thankyou" ? <FormthankYou /> : null}
+      <div style={{ display: "flex", justifyContent: "space-between" }}></div>
     </>
   );
 }
