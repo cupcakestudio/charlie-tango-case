@@ -57,7 +57,11 @@ export default function Home() {
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
       {page === "potentialBuyerView" ? (
-        <PotentialBuyers setPage={setPage} sellerData={sellerData} />
+        <PotentialBuyers
+          setPage={setPage}
+          sellerData={sellerData}
+          setSellerData={setSellerData}
+        />
       ) : null}
       {page === "contactEDC" ? (
         <ContactForm setPage={setPage} sellerData={sellerData} />
