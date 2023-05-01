@@ -8,12 +8,9 @@ import { PotentialBuyers } from "@/components/PotentialBuyers";
 import ContactForm from "@/components/ContactForm";
 export default function Home() {
   /* konstanten page tjekker hvilken side vi er på med useState */
-  const [page, setPage] = useState("potentialBuyerView");
+  const [page, setPage] = useState("yourEstate");
   // Definere state, sellerData, så vi længere nede kan sende staten videre
   const [sellerData, setSellerData] = useState({
-    price: 5000000,
-    zipCode: 2000,
-    estateType: 1,
     buyers: [],
   });
 

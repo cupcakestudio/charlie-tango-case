@@ -3,15 +3,22 @@ import { priceFormatter } from "@/data/buyerProfiles";
 import { estateTypes } from "@/data/estateTypes";
 export function BuyerCard(props) {
   // props gør vi kan bruge de taget values fra inputfelter
+
   function toggleBuyer() {
     props.setSellerData((prev) => {
       if (prev.buyers.find((id) => id === props.id)) {
         //hvis props.id findes in sellerdata så skal den væk
         console.log("fandt id, den skal bæk");
-        return { ...prev, buyers: prev.buyers.filter((id) => id !== props.id) };
+        return {
+          ...prev,
+          buyers: prev.buyers.filter((id) => id !== props.id),
+        };
       } else {
         //ellers skal den ind
-        return { ...prev, buyers: prev.buyers.concat(props.id) };
+        return {
+          ...prev,
+          buyers: prev.buyers.concat(props.id),
+        };
       }
     });
   }
@@ -60,16 +67,3 @@ export function BuyerCard(props) {
     </>
   );
 }
-
-/* export async function getStaticProps() {
-  const api = "http://localhost:3000/api/find-buyers";
-  const res = await fetch(api);
-  const data = await res.json();
-  console.log(data);
-
-  return {
-    props: {
-      data,
-    },
-  };
-} */
