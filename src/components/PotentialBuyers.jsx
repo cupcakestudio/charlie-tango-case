@@ -6,14 +6,14 @@ export function PotentialBuyers(props) {
   useEffect(() => {
     fetch(
       // fetcher api med props og læser state data (sellerData)
-      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateTypeIndex=${props.sellerData.estateTypeIndex}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
     )
       .then((res) => res.json())
       .then((data) => {
         setpotentialBuyer(data);
         console.log(data);
       });
-  }, []);
+  }, [props.sellerData]);
 
   return (
     <>
@@ -21,7 +21,7 @@ export function PotentialBuyers(props) {
       <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
-            <p>Select your matches</p>
+            <h2>Select your matches</h2>
             <p>Total of matching buyers: X</p>
             <div className={styles.potential_grid}>
               {potentialBuyer.map((seller) => (
@@ -31,13 +31,13 @@ export function PotentialBuyers(props) {
                 </div>
               ))}
             </div>
+            <button
+              className={styles.button}
+              onClick={() => props.setPage("contactEDC")}
+            >
+              Next
+            </button>
           </div>
-          <button
-            className={styles.button}
-            onClick={() => props.setPage("contactEDC")}
-          >
-            Next
-          </button>
         </section>
       </div>
     </>

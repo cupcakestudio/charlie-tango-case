@@ -1,4 +1,6 @@
 import styles from "src/pages/Home.module.css";
+import { priceFormatter } from "@/data/buyerProfiles";
+import { estateTypes } from "@/data/estateTypes";
 export function BuyerCard(props) {
   // props gør vi kan bruge de taget values fra inputfelter
   return (
@@ -12,13 +14,13 @@ export function BuyerCard(props) {
         </div>
         <div className={styles.divEstateInfo}>
           <p>
-            <span>Estate type:</span> {props.estateType}
+            <span>Estate type:</span> {estateTypes[props.estateType - 1].name}
           </p>
           <p>
             <span>Min. size:</span> {props.minSize}
           </p>
           <p>
-            <span>Max. price:</span> {props.maxPrice}
+            <span>Max. price:</span> {priceFormatter.format(props.maxPrice)}
           </p>
         </div>
         <div>
