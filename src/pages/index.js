@@ -11,7 +11,9 @@ import StepBar from "src/components/stepBar.jsx";
 export default function Home() {
   const [page, setPage] = useState("landing");
   // Definere state, sellerData, så vi længere nede kan sende staten videre
-  const [sellerData, setSellerData] = useState({});
+  const [sellerData, setSellerData] = useState({
+    buyers: [],
+  });
 
   //function der returnerer på hver pagenav menuens værdier
   function getActive() {
