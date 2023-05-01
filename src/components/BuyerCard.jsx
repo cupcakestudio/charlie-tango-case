@@ -1,6 +1,7 @@
 import styles from "src/pages/Home.module.css";
 import { priceFormatter } from "@/data/buyerProfiles";
 import { estateTypes } from "@/data/estateTypes";
+import { useState } from "react";
 export function BuyerCard(props) {
   // props gør vi kan bruge de taget values fra inputfelter
 
