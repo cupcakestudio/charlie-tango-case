@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <>
+     
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
