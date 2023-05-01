@@ -33,7 +33,7 @@
 
 .label {
   /* margin-bottom: 0.5rem; */
-  font-weight: 700;
+
   display: block;
 }
 
@@ -74,20 +74,18 @@
   cursor: pointer;
 }
 
-.back_next_buttons{
+.back_next_buttons {
   display: flex;
   place-content: space-between;
   margin-inline: 30px;
 }
 
-.button_back_next{
- 
+.button_back_next {
   background: none;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
- 
 }
-.button_back_next:hover{
+.button_back_next:hover {
   cursor: pointer;
   color: black;
 }

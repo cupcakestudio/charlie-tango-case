@@ -96,7 +96,7 @@ export default function ContactForm(props) {
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Form Input</h1>
+        <h1 className={styles.headline}>Your contact info</h1>
         {/*  redirects to new div */}
         <section className={styles.formBackground}>
           <form
