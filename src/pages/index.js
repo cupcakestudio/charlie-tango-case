@@ -28,16 +28,13 @@ export default function Home() {
       {page === "yourEstate" ? (
         <FormCard setPage={setPage} setSellerData={setSellerData} />
       ) : null}
-      {page === "yourEstate" ? (
-        <FormCard setPage={setPage} setSellerData={setSellerData} />
-      ) : null}
       {page === "potentialBuyerView" ? (
         <PotentialBuyers setPage={setPage} sellerData={sellerData} />
       ) : null}
       {page === "contactEDC" ? (
         <ContactForm setPage={setPage} sellerData={sellerData} />
       ) : null}
-      {page === "ContactEDC" ? <ContactForm /> : null}
+      {page === "thankyou" ? <FormthankYou /> : null}
     </>
   );
 }
