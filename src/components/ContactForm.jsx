@@ -36,39 +36,57 @@ import styles from "src/pages/Home.module.css"
 //     changePage();
 //   }
 
-import {useContext,  useRef } from "react";
-import { FormsSellerContext, UpdateSellerContext } from "@/contexts/FormContext";
+import {useState, useEffect,  useRef } from "react";
 
 
 export default function ContactForm(props) {
 //const to get form, using ref to hook up the form
 const formEl = useRef(null);
-// const sellerInfo = useContext(FormsSellerContext);
-//   //get the context from the form here.
-// const setSellerInfoState = useContext(UpdateSellerContext);
-// console.log(setSellerInfoState);
+
+const [SellerInfo, setSellerInfo] = useState([]);
+  useEffect(() => {
+    fetch(
+      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setSellerInfo(data);
+        console.log(data, props.sellerData.price);
+      });
+  }, []);
 
 function submitToDB(e) {
     e.preventDefault();
     console.log("prevent", );
-    // setSellerInfoState((oldstate) => oldstate + 1)
-console.log(formEl.current.name.value)
     //create an object entry for supabase.
     const payload = {
-      name: "Ting",
-      email: "ting0226@stud.kea.dk"
+      fullname: formEl.current.name.value,
+      email: formEl.current.email.value,
+      phone: formEl.current.phone.value,
+      address: formEl.current.address.value,
+      //from here the props are taken from the previous filled out form about the estate
+      price: props.sellerData.price,
+      estateType: props.sellerData.estateType,
+      size: props.sellerData.size,
+      zipCode: props.sellerData.zipCode,
+      
+      specifications: props.sellerData.specifications,
     }
-    //send request to local api for buyers before sending whole form to supabase
-    fetch("api/find-buyers", {
+    
+    console.log(payload);
+    //send request to local api for sellers before sending whole form to supabase
+    fetch("/api/form-filled", {
+     
             method: "POST",
             headers: {
               "Content-Type": "application/json"
             }, 
             body: JSON.stringify(payload),
-          }).then(res=> res.json()).then(data=> console.log(data))
+          }).then(res=> res.json()).then(data=> console.log("data", data, payload))
 
-
+changePage();
 }
+
 //change page state to Thank you state
   function changePage(){
     props.setPage("thankyou")
@@ -90,7 +108,7 @@ return (  <>
           ref={formEl}
           onSubmit={submitToDB}
         >
-          <label className={styles.label} htmlFor="Price">
+          <label className={styles.label} htmlFor="Name">
             <input name="Name" id="name" placeholder="Name" required />
           </label>
            <label htmlFor="Email">
@@ -98,21 +116,31 @@ return (  <>
               name="Email"
               type="email"
               placeholder="Email"
-              id="Email"
+              id="email"
               required
             />
           </label>
-          {/*<label className={styles.size_zip}>
-            <label htmlFor="Size">
+        
+            <label htmlFor="Phone">
               <input
                 className={styles.size}
-                name="Size in m^2"
-                id="Size"
-                placeholder="Size in m^2"
+                name="Phone"
+                id="phone"
+                placeholder="Phone:"
                 required
               />
             </label>
-            <label htmlFor="zipCode">
+            <label htmlFor="Address">
+              <input
+                className={styles.label}
+                name="Address"
+                id="address"
+                placeholder="Address:"
+                required
+              />
+            </label>
+            
+           {/* <label htmlFor="zipCode">
               <input
                 name="zipCode"
                 id="zipCode"

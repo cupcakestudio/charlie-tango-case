@@ -81,7 +81,7 @@ export function FormInput(props) {
               name="specifications"
               id="Specifications"
               placeholder="Specifications"
-              required
+              
             ></textarea>
           </label>
           <button type="submit">Next</button>
