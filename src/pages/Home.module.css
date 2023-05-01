@@ -100,6 +100,7 @@
   margin-bottom: 6rem;
 }
 
+<<<<<<< HEAD
 /* BUYER CARD  */
 
 .card div {
@@ -135,6 +136,8 @@
 .form textarea {
   width: 20rem;
 }
+=======
+>>>>>>> styling-thank-you
 
 @media (min-width: 640px) {
   /* YOUR ESTATE */

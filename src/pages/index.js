@@ -22,6 +22,7 @@ export default function Home() {
       {page === "landing" ? (
         <Landingpage setPage={setPage}></Landingpage>
       ) : null}
+      <FormthankYou></FormthankYou>
 
       {/* definere en state til denne side*/}
       {page === "yourEstate" ? (
