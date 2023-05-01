@@ -137,7 +137,19 @@
   width: 20rem;
 }
 
-/* styling-thank-you */
+/* styling af checkbox */
+.checkbox {
+  width: 20rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.checkbox input {
+  width: 20px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+}
 
 @media (min-width: 640px) {
   /* YOUR ESTATE */
