@@ -13,7 +13,6 @@ export default function Home() {
   // Definere state, sellerData, så vi længere nede kan sende staten videre
   const [sellerData, setSellerData] = useState({});
 
-
   //function der returnerer på hver pagenav menuens værdier
   function getActive() {
     if (page === "landing") {
@@ -56,17 +55,16 @@ export default function Home() {
 
   return (
     <>
-     
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
       <StepBar activeStep={getActive()} />
       <div className={styles.back_next_buttons}>
-        <button className={styles.button_back_next} onClick={handleNext}>
-          Forward{" "}
-        </button>
         <button className={styles.button_back_next} onClick={handleBack}>
           back{" "}
+        </button>
+        <button className={styles.button_back_next} onClick={handleNext}>
+          Forward{" "}
         </button>
       </div>
       {page === "landing" ? <Landingpage setPage={setPage} /> : null}
