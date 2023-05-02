@@ -46,6 +46,7 @@ export function FormInput(props) {
             }}
             className="form-field"
             name="price"
+            required
           />
 
           <label htmlFor="EstateType">
