@@ -1,28 +1,35 @@
 import styles from "src/pages/Home.module.css";
 import { priceFormatter } from "@/data/buyerProfiles";
 import { estateTypes } from "@/data/estateTypes";
-import { useState } from "react";
+
 export function BuyerCard(props) {
   // props gør vi kan bruge de taget values fra inputfelter
 
   function toggleBuyer() {
     props.setSellerData((prev) => {
-      if (prev.buyers.find((id) => id === props.id)) {
-        //hvis props.id findes in sellerdata så skal den væk
-        console.log("fandt id, den skal bæk");
+      if (prev.buyers.find((obj) => obj.id === props.id)) {
+        //hvis obj.id findes i sellerdata så skal den væk
+        console.log("fandt id, den skal væk");
         return {
           ...prev,
-          buyers: prev.buyers.filter((id) => id !== props.id),
+          buyers: prev.buyers.filter((obj) => obj.id !== props.id),
         };
       } else {
-        //ellers skal den ind
+        //ellers skal den tilføjes via concat til buyersarray
         return {
           ...prev,
-          buyers: prev.buyers.concat(props.id),
+          buyers: prev.buyers.concat({
+            id: props.id,
+            takeoverDate: props.takeoverDate,
+            estateType: props.estateType,
+            maxPrice: props.maxPrice,
+            minSize: props.minSize,
+          }),
         };
       }
     });
   }
+
   return (
     <>
       <section className={styles.card}>
@@ -56,7 +63,8 @@ export function BuyerCard(props) {
         </div>
         <button
           className={
-            props.sellerData.buyers.includes(props.id)
+            // hvis valgt, hvis obj + id er det samme, så for den styles.selected : (ellers) styles.selectButton
+            props.sellerData.buyers.find((obj) => obj.id === props.id)
               ? styles.selected
               : styles.selectButton
           }
