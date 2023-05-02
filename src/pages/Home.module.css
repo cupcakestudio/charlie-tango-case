@@ -180,7 +180,7 @@
   place-self: start;
 }
 
-/* DASHBOARD CONTACTS CARd  */
+/* DashCard styling  */
 .date_delete{
   display: flex;
   place-content: space-between;
@@ -204,6 +204,26 @@ grid-template-columns: 1fr 1fr;
   padding-inline-start: 2rem;
   margin-bottom: 1rem;
 }
+
+
+/* ThankYou styling  */
+
+.thankYouSection {
+  padding: 20rem;
+  margin-top: -12%;
+}
+
+.thankYouText {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.button_thankYou {
+  text-align: center;
+
+}
+
+
 
 @media (min-width: 640px) {
   /* YOUR ESTATE */
@@ -229,4 +249,13 @@ grid-template-columns: 1fr 1fr;
   .potential_container {
     text-align: center;
   }
+}
+.thankYouSection {
+  padding: 25px;
+  margin-top: 0%;
+}
+
+.thankYouText {
+  text-align: center;
+  font-size: 1rem;
 }
