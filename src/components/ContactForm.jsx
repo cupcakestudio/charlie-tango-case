@@ -7,7 +7,7 @@ export default function ContactForm(props) {
   //const to get form, using ref to hook up the form
   const formEl = useRef(null);
 
-  /*  const [SellerInfo, setSellerInfo] = useState([]); */
+  const [SellerInfo, setSellerInfo] = useState([]);
   /*  useEffect(() => {
     fetch(
       `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
@@ -15,7 +15,6 @@ export default function ContactForm(props) {
       .then((res) => res.json())
       .then((data) => {
         setSellerInfo(data);
-       
       });
   }, []); */
 
@@ -33,7 +32,8 @@ export default function ContactForm(props) {
       estateType: props.sellerData.estateType,
       size: props.sellerData.size,
       zipCode: props.sellerData.zipCode,
-
+      buyers: props.buyers,
+      consent: formEl.current.consent.checked,
       specifications: props.sellerData.specifications,
     };
 
@@ -48,19 +48,17 @@ export default function ContactForm(props) {
     })
       .then((res) => res.json())
       .then((data) => console.log("data", data, payload));
-    GetBuyerArray(data);
-    changePage();
+    /* GetBuyerArray(data); */
+    /*  changePage(); */
   }
 
-  /*  function GetBuyerArray(data) {
+  /*   function GetBuyerArray(data) {
     const [] = data.buyers;
     console.log([]);
   } */
-  function GetBuyerArray({ buyers }) {
-    console.log(buyers);
-  }
+
   //change page state to Thank you state
-  function changePage(props) {
+  function changePage() {
     props.setPage("thankyou");
   }
   return (
@@ -73,16 +71,17 @@ export default function ContactForm(props) {
         {/*  redirects to new div */}
         <section className={styles.formBackground}>
           <section className={styles.contactForm}>
-            <article className={styles.contact_left}>
-              <h2 className={styles.contact_h2}>Contact info</h2>
-              <form
-                className={styles.form}
-                action="#"
-                method="GET"
-                id="Contact"
-                ref={formEl}
-                /* onSubmit={submitToDB} */
-              >
+            <form
+              className={styles.form}
+              action="#"
+              method="GET"
+              id="Contact"
+              ref={formEl}
+              onSubmit={submitToDB}
+            >
+              <article className={styles.contact_left}>
+                <h2 className={styles.contact_h2}>Contact info</h2>
+
                 <label className={styles.label} htmlFor="Name">
                   <input name="Name" id="name" placeholder="Name" required />
                 </label>
@@ -116,33 +115,32 @@ export default function ContactForm(props) {
                 </label>
 
                 <div className={styles.checkbox}>
-                  <input type="checkbox" className="checkbox" id="checkbox" />
+                  <input type="checkbox" className="checkbox" id="consent" />
                   <label className="checkbox" htmlFor="checkbox">
                     Yes please, EDC may contact me with offers and information
                     related to the realestate market.
                   </label>
                 </div>
-              </form>
-            </article>
+              </article>
 
-            <article className={styles.contact_right}>
-              <h2 className={styles.contact_h2}>Choosen buyers</h2>
-              <div className={styles.checkbox}>
-                <input type="checkbox" className="checkbox" id="checkbox_1" />
+              <article className={styles.contact_right}>
+                <h2 className={styles.contact_h2}>Chosen buyers</h2>
+                <div className={styles.checkbox}>
+                  <input type="checkbox" className="checkbox" id="checkbox_1" />
 
-                <ul>
-                  {props.sellerData.buyers.map((buyer) => (
-                    <>
-                      <li>{buyer.id}</li>
-                    </>
-                  ))}
-                </ul>
-              </div>
-            </article>
+                  <ul>
+                    {props.sellerData.buyers.map((buyer) => (
+                      <>
+                        <li key={buyer.id}>{buyer.id}</li>
+                      </>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+
+              <button className={styles.button}>Submit</button>
+            </form>
           </section>
-          <button onSubmit={submitToDB} className={styles.button}>
-            Submit
-          </button>
         </section>
       </div>
     </>
