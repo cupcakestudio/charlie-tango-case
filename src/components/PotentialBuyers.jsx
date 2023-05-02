@@ -16,8 +16,6 @@ export function PotentialBuyers(props) {
       });
   }, [props.sellerData]);
 
-
-
   return (
     <>
       <h1 className={styles.headline}>Potential buyers</h1>
@@ -25,7 +23,7 @@ export function PotentialBuyers(props) {
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
             <h2>Select your matches</h2>
-            <p>Total of matching buyers: {props.sellerData.buyers.length}</p>
+            <p>Selected buyers: {props.sellerData.buyers.length}</p>
             <div className={styles.potential_grid}>
               {potentialBuyer.map((seller) => (
                 // sender id med så den kan kende forskel
@@ -47,7 +45,6 @@ export function PotentialBuyers(props) {
           </div>
         </section>
       </div>
-    
     </>
   );
 }
