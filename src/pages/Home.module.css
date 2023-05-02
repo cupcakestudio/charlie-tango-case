@@ -30,6 +30,9 @@
   /* max-width: 100%; */
   justify-items: center;
 }
+#display {
+  font-size: 3rem;
+}
 
 .form input {
   width: 20rem;
@@ -112,6 +115,13 @@
 }
 
 /* BUYER CARD  */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
 .card div {
   text-align: left;
