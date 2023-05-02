@@ -30,11 +30,8 @@
   /* max-width: 100%; */
   justify-items: center;
 }
-
-.label {
-  /* margin-bottom: 0.5rem; */
-
-  display: block;
+#display {
+  font-size: 3rem;
 }
 
 .form input {
@@ -142,6 +139,7 @@
   margin-top: auto;
   padding: 1rem;
   cursor: pointer;
+  width: 20rem;
 }
 .selectButton {
   place-content: center;
@@ -219,6 +217,47 @@
   text-align: center;
 }
 
+/* DashCard styling  */
+.date_delete {
+  display: flex;
+  place-content: space-between;
+  margin-inline: 1rem;
+}
+
+.divContacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contactsright {
+  display: grid;
+}
+.contactsLeft {
+  display: grid;
+}
+
+.contactedCheckBox {
+  text-align: left;
+  padding-inline-start: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ThankYou styling  */
+
+.thankYouSection {
+  padding: 20rem;
+  margin-top: -12%;
+}
+
+.thankYouText {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.button_thankYou {
+  text-align: center;
+}
+
 @media (min-width: 640px) {
   /* YOUR ESTATE */
   .size_zip {
@@ -243,4 +282,13 @@
   .potential_container {
     text-align: center;
   }
+}
+.thankYouSection {
+  padding: 25px;
+  margin-top: 0%;
+}
+
+.thankYouText {
+  text-align: center;
+  font-size: 1rem;
 }

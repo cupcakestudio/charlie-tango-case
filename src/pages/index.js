@@ -70,6 +70,10 @@ export default function Home() {
       ) : null}
       {page === "thankyou" ? <FormthankYou /> : null}
       <div style={{ display: "flex", justifyContent: "space-between" }}></div>
+      {/* definere en state til denne side*/}
+      {page === "yourEstate" ? <FormCard setPage={setPage} /> : null}
+      {page === "potentialBuyerView" ? <PotentialBuyers /> : null}
+      {page === "ContactEDC" ? <ContactForm /> : null}
     </>
   );
 }

@@ -46,6 +46,7 @@ export function FormInput(props) {
             }}
             className="form-field"
             name="price"
+            required
           />
 
           <label htmlFor="EstateType">
@@ -61,7 +62,6 @@ export function FormInput(props) {
             </select>
           </label>
           <label className={styles.size_zip}>
-            {" "}
             Size in m^2
             <label htmlFor="Size">
               <input
@@ -74,7 +74,6 @@ export function FormInput(props) {
               />
             </label>
             <label htmlFor="zipCode">
-              {" "}
               Zip code
               <input
                 name="zipCode"
