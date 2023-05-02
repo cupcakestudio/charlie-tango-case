@@ -14,6 +14,9 @@ export function DashCard(props) {
                 <p>Name: {props.fullname}</p>
                 <p>E-mail: {props.email}</p>
                 <p>Phone: {props.phone}</p>
+                {/* if seller has checked "#consent checkbox" display yes, else no */}
+                <p>Consent to be contacted: </p> <span>{props.consent ? "Yes": "No"}</span>
+
             </div>
        
             <div className="contactsright">
