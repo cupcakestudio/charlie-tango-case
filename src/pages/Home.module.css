@@ -184,6 +184,38 @@
   display: grid;
   place-self: start;
 }
+/* STYLING AF CONTACT SIDE */
+/* styling af kolonner */
+.checkbox_left,
+.checkbox_right {
+  width: 20rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.contact_right {
+  margin-left: 3rem;
+}
+
+.checkbox input {
+  width: 20px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+}
+
+.checkbox {
+  display: flex;
+}
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact_h2 {
+  text-align: center;
+}
 
 /* DashCard styling  */
 .date_delete {
