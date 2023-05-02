@@ -5,6 +5,7 @@ export function PotentialBuyers(props) {
   const [potentialBuyer, setpotentialBuyer] = useState([]);
 
   useEffect(() => {
+    // if sætning lavet, hvis den findes, da den kører 2 gange
     if (props.sellerData) {
       fetch(
         // fetcher api med props og læser state data (sellerData)
@@ -25,6 +26,7 @@ export function PotentialBuyers(props) {
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
             <h2>Select your matches</h2>
+            {/* ?. spørg hvis den ikke findes så..  */}
             <p>Selected buyers: {props?.sellerData?.buyers?.length || 0}</p>
             <div className={styles.potential_grid}>
               {potentialBuyer.map((seller) => (
