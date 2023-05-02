@@ -5,15 +5,17 @@ export function PotentialBuyers(props) {
   const [potentialBuyer, setpotentialBuyer] = useState([]);
 
   useEffect(() => {
-    fetch(
-      // fetcher api med props og læser state data (sellerData)
-      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setpotentialBuyer(data);
-        console.log(data);
-      });
+    if (props.sellerData) {
+      fetch(
+        // fetcher api med props og læser state data (sellerData)
+        `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setpotentialBuyer(data);
+          console.log(data);
+        });
+    }
   }, [props.sellerData]);
 
   return (
@@ -23,7 +25,7 @@ export function PotentialBuyers(props) {
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
             <h2>Select your matches</h2>
-            <p>Selected buyers: {props.sellerData.buyers.length}</p>
+            <p>Selected buyers: {props?.sellerData?.buyers?.length || 0}</p>
             <div className={styles.potential_grid}>
               {potentialBuyer.map((seller) => (
                 // sender id med så den kan kende forskel
