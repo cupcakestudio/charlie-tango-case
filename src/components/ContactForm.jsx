@@ -1,57 +1,23 @@
 import Head from "next/head";
 import styles from "src/pages/Home.module.css";
 
-//import { FormsSellerContext, UpdateSellerContext } from "@/contexts/FormContext";
-
-// export default function ContactForm(props) {
-// //const to get form, using ref to hook up the form
-// const formEl = useRef(null);
-// const [sellerInfo, setSellerInfoState] = useState(0);
-//   //get the context from the form here.
-// // const setSellerInfoState = useContext(UpdateSellerContext);
-// console.log(setSellerInfoState, setSellerInfoState((oldstate) => oldstate + 1));
-
-// //make state an object
-// const {form} = sellerInfo;
-
-// function submitToDB(e) {
-//     e.preventDefault();
-//     console.log("prevent", );
-
-// console.log(formEl.current.name.value)
-//     //create an object entry for supabase.
-//     const payload = {
-//       name: "Ting",
-//       email: "ting0226@stud.kea.dk",
-//       //whatever is in state
-//       form: form,
-//     }
-//     //send request to localapi for buyers before sending whole form to supabase
-//     fetch("/api/find-buyers", {
-//       method: POST,
-//       api_key: ""
-//     })
-//     //send user to next page
-//     changePage();
-//   }
-
 import { useState, useEffect, useRef } from "react";
 
 export default function ContactForm(props) {
   //const to get form, using ref to hook up the form
   const formEl = useRef(null);
 
-  const [SellerInfo, setSellerInfo] = useState([]);
-  useEffect(() => {
+  /*  const [SellerInfo, setSellerInfo] = useState([]); */
+  /*  useEffect(() => {
     fetch(
       `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
     )
       .then((res) => res.json())
       .then((data) => {
         setSellerInfo(data);
-        console.log(data, props.sellerData.price);
+       
       });
-  }, []);
+  }, []); */
 
   function submitToDB(e) {
     e.preventDefault();
@@ -82,10 +48,17 @@ export default function ContactForm(props) {
     })
       .then((res) => res.json())
       .then((data) => console.log("data", data, payload));
-
+    GetBuyerArray(data);
     changePage();
   }
 
+  /*  function GetBuyerArray(data) {
+    const [] = data.buyers;
+    console.log([]);
+  } */
+  function GetBuyerArray({ buyers }) {
+    console.log(buyers);
+  }
   //change page state to Thank you state
   function changePage(props) {
     props.setPage("thankyou");
@@ -108,7 +81,7 @@ export default function ContactForm(props) {
                 method="GET"
                 id="Contact"
                 ref={formEl}
-                onSubmit={submitToDB}
+                /* onSubmit={submitToDB} */
               >
                 <label className={styles.label} htmlFor="Name">
                   <input name="Name" id="name" placeholder="Name" required />
@@ -155,19 +128,21 @@ export default function ContactForm(props) {
             <article className={styles.contact_right}>
               <h2 className={styles.contact_h2}>Choosen buyers</h2>
               <div className={styles.checkbox}>
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  id="checkbox_1"
-                  checked
-                />
-                <label className={styles.checkbox_text_1} htmlFor="checkbox">
-                  Buyer 1
-                </label>
+                <input type="checkbox" className="checkbox" id="checkbox_1" />
+
+                <ul>
+                  {props.sellerData.buyers.map((buyer) => (
+                    <>
+                      <li>{buyer.id}</li>
+                    </>
+                  ))}
+                </ul>
               </div>
             </article>
           </section>
-          <button className={styles.button}>Submit</button>
+          <button onSubmit={submitToDB} className={styles.button}>
+            Submit
+          </button>
         </section>
       </div>
     </>
