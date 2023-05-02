@@ -7,17 +7,6 @@ export default function ContactForm(props) {
   //const to get form, using ref to hook up the form
   const formEl = useRef(null);
 
-  const [SellerInfo, setSellerInfo] = useState([]);
-  /*  useEffect(() => {
-    fetch(
-      `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setSellerInfo(data);
-      });
-  }, []); */
-
   function submitToDB(e) {
     e.preventDefault();
     console.log("prevent");
@@ -48,14 +37,9 @@ export default function ContactForm(props) {
     })
       .then((res) => res.json())
       .then((data) => console.log("data", data, payload));
-    /* GetBuyerArray(data); */
-    /*  changePage(); */
-  }
 
-  /*   function GetBuyerArray(data) {
-    const [] = data.buyers;
-    console.log([]);
-  } */
+    changePage();
+  }
 
   //change page state to Thank you state
   function changePage() {
