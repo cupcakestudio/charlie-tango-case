@@ -64,7 +64,7 @@ export function FormInput(props) {
                 placeholder="Zip code"
                 required
                 minLength="4"
-                maxength="4"
+                maxLength="4"
               />
             </label>
           </label>
@@ -74,7 +74,6 @@ export function FormInput(props) {
               name="specifications"
               id="Specifications"
               placeholder="Specifications"
-              
             ></textarea>
           </label>
           <button type="submit">Next</button>
