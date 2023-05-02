@@ -21,7 +21,7 @@ export default function ContactForm(props) {
       estateType: props.sellerData.estateType,
       size: props.sellerData.size,
       zipCode: props.sellerData.zipCode,
-      buyers: props.buyers,
+      buyers: props.sellerData.buyers,
       consent: formEl.current.consent.checked,
       specifications: props.sellerData.specifications,
     };
@@ -63,6 +63,18 @@ export default function ContactForm(props) {
               ref={formEl}
               onSubmit={submitToDB}
             >
+              <article className={styles.contact_right}>
+                <h2 className={styles.contact_h2}>Chosen buyers</h2>
+                <div className={styles.checkbox}>
+                  {props.sellerData.buyers.map((buyer) => (
+                    <>
+                      <p key={buyer.id}>{buyer.id}</p>
+                      <button>X</button>
+                    </>
+                  ))}
+                </div>
+              </article>
+
               <article className={styles.contact_left}>
                 <h2 className={styles.contact_h2}>Contact info</h2>
 
@@ -104,21 +116,6 @@ export default function ContactForm(props) {
                     Yes please, EDC may contact me with offers and information
                     related to the realestate market.
                   </label>
-                </div>
-              </article>
-
-              <article className={styles.contact_right}>
-                <h2 className={styles.contact_h2}>Chosen buyers</h2>
-                <div className={styles.checkbox}>
-                  <input type="checkbox" className="checkbox" id="checkbox_1" />
-
-                  <ul>
-                    {props.sellerData.buyers.map((buyer) => (
-                      <>
-                        <li key={buyer.id}>{buyer.id}</li>
-                      </>
-                    ))}
-                  </ul>
                 </div>
               </article>
 
