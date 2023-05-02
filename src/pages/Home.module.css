@@ -24,6 +24,14 @@
   box-shadow: 2px 2px 8px 0px;
   padding: 4rem;
 }
+/* .form label {
+  display: grid;
+} */
+
+.display {
+  display: grid;
+}
+
 .form {
   display: grid;
   gap: 1rem;
@@ -181,30 +189,29 @@
 }
 
 /* DashCard styling  */
-.date_delete{
+.date_delete {
   display: flex;
   place-content: space-between;
   margin-inline: 1rem;
 }
 
-.divContacts{
-display: grid;
-grid-template-columns: 1fr 1fr;
+.divContacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.contactsright{
+.contactsright {
   display: grid;
 }
-.contactsLeft{
+.contactsLeft {
   display: grid;
 }
 
-.contactedCheckBox{
+.contactedCheckBox {
   text-align: left;
   padding-inline-start: 2rem;
   margin-bottom: 1rem;
 }
-
 
 /* ThankYou styling  */
 
@@ -220,10 +227,7 @@ grid-template-columns: 1fr 1fr;
 
 .button_thankYou {
   text-align: center;
-
 }
-
-
 
 @media (min-width: 640px) {
   /* YOUR ESTATE */

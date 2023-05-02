@@ -37,17 +37,20 @@ export function FormInput(props) {
           {/* <label className={styles.label} htmlFor="Price">
             <input name="price" id="Price" placeholder="Price" required />
           </label> */}
-          <Cleave
-            placeholder="Price"
-            options={{
-              numericOnly: true,
-              delimiters: [".", "."],
-              blocks: [1, 3, 3],
-            }}
-            className="form-field"
-            name="price"
-            required
-          />
+          <label className={styles.display}>
+            Price
+            <Cleave
+              placeholder="Price"
+              options={{
+                numericOnly: true,
+                delimiters: [".", "."],
+                blocks: [1, 3, 3],
+              }}
+              className="form-field"
+              name="price"
+              required
+            />
+          </label>
 
           <label htmlFor="EstateType">
             Estate type
@@ -61,10 +64,10 @@ export function FormInput(props) {
               ))}
             </select>
           </label>
-          <label className={styles.size_zip}>
-            {" "}
-            Size in m^2
+
+          <div className={styles.size_zip}>
             <label htmlFor="Size">
+              Size in m^2
               <input
                 className={styles.size}
                 name="size"
@@ -75,7 +78,6 @@ export function FormInput(props) {
               />
             </label>
             <label htmlFor="zipCode">
-              {" "}
               Zip code
               <input
                 name="zipCode"
@@ -86,8 +88,9 @@ export function FormInput(props) {
                 maxLength="4"
               />
             </label>
-          </label>
+          </div>
           <label htmlFor="Specifications">
+            Specifications
             <textarea
               className={styles.textbox}
               name="specifications"
