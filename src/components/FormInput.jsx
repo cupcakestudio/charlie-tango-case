@@ -1,5 +1,6 @@
 import styles from "src/pages/Home.module.css";
 import { estateTypes } from "@/data/estateTypes";
+import Cleave from "cleave.js/react";
 
 export function FormInput(props) {
   function onSubmitPotentialBuyer(e) {
@@ -7,7 +8,7 @@ export function FormInput(props) {
     props.setSellerData({
       // tjekker input felters value (syntaks for inputfelter - e.taget.elements
       // properties.value kommer fra input name
-      price: e.target.elements.price.value,
+      price: e.target.elements.price.rawValue,
       estateType: e.target.elements.estateType.value,
       size: e.target.elements.size.value,
       zipCode: e.target.elements.zipCode.value,
@@ -33,10 +34,22 @@ export function FormInput(props) {
           id="FormEstateInfo"
           onSubmit={onSubmitPotentialBuyer}
         >
-          <label className={styles.label} htmlFor="Price">
+          {/* <label className={styles.label} htmlFor="Price">
             <input name="price" id="Price" placeholder="Price" required />
-          </label>
+          </label> */}
+          <Cleave
+            placeholder="Price"
+            options={{
+              numericOnly: true,
+              delimiters: [".", "."],
+              blocks: [1, 3, 3],
+            }}
+            className="form-field"
+            name="price"
+          />
+
           <label htmlFor="EstateType">
+            Estate type
             {/* Dropdown */}
             <select name="estateType" id="EstateType">
               <option value="">Select estate type</option>
@@ -48,16 +61,21 @@ export function FormInput(props) {
             </select>
           </label>
           <label className={styles.size_zip}>
+            {" "}
+            Size in m^2
             <label htmlFor="Size">
               <input
                 className={styles.size}
                 name="size"
                 id="Size"
                 placeholder="Size in m^2"
+                maxLength="3"
                 required
               />
             </label>
             <label htmlFor="zipCode">
+              {" "}
+              Zip code
               <input
                 name="zipCode"
                 id="zipCode"
