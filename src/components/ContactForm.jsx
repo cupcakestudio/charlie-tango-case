@@ -87,7 +87,7 @@ export default function ContactForm(props) {
   }
 
   //change page state to Thank you state
-  function changePage() {
+  function changePage(props) {
     props.setPage("thankyou");
   }
   return (
@@ -96,59 +96,78 @@ export default function ContactForm(props) {
         <title>Your Estate | EDC</title>
       </Head>
       <div className="wrapper">
-        <h1 className={styles.headline}>Your contact info</h1>
+        <h1 className={styles.headline}>Form Input</h1>
         {/*  redirects to new div */}
         <section className={styles.formBackground}>
-          <form
-            className={styles.form}
-            action="#"
-            method="GET"
-            id="Contact"
-            ref={formEl}
-            onSubmit={submitToDB}
-          >
-            <label className={styles.label} htmlFor="Name">
-              <input name="Name" id="name" placeholder="Name" required />
-            </label>
-            <label htmlFor="Email">
-              <input
-                name="Email"
-                type="email"
-                placeholder="Email"
-                id="email"
-                required
-              />
-            </label>
+          <section className={styles.contactForm}>
+            <article className={styles.contact_left}>
+              <h2 className={styles.contact_h2}>Contact info</h2>
+              <form
+                className={styles.form}
+                action="#"
+                method="GET"
+                id="Contact"
+                ref={formEl}
+                onSubmit={submitToDB}
+              >
+                <label className={styles.label} htmlFor="Name">
+                  <input name="Name" id="name" placeholder="Name" required />
+                </label>
+                <label htmlFor="Email">
+                  <input
+                    name="Email"
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                    required
+                  />
+                </label>
 
-            <label htmlFor="Phone">
-              <input
-                className={styles.size}
-                name="Phone"
-                id="phone"
-                placeholder="Phone"
-                required
-              />
-            </label>
-            <label htmlFor="Address">
-              <input
-                className={styles.label}
-                name="Address"
-                id="address"
-                placeholder="Address"
-                required
-              />
-            </label>
+                <label htmlFor="Phone">
+                  <input
+                    className={styles.size}
+                    name="Phone"
+                    id="phone"
+                    placeholder="Phone"
+                    required
+                  />
+                </label>
+                <label htmlFor="Address">
+                  <input
+                    className={styles.label}
+                    name="Address"
+                    id="address"
+                    placeholder="Address"
+                    required
+                  />
+                </label>
 
-            <div className={styles.checkbox}>
-              <input type="checkbox" className="checkbox" id="checkbox" />
-              <label className="checkbox" htmlFor="checkbox">
-                Yes please, EDC may contact me with offers and information
-                related to the realestate market.
-              </label>
-            </div>
+                <div className={styles.checkbox}>
+                  <input type="checkbox" className="checkbox" id="checkbox" />
+                  <label className="checkbox" htmlFor="checkbox">
+                    Yes please, EDC may contact me with offers and information
+                    related to the realestate market.
+                  </label>
+                </div>
+              </form>
+            </article>
 
-            <button>Submit</button>
-          </form>
+            <article className={styles.contact_right}>
+              <h2 className={styles.contact_h2}>Choosen buyers</h2>
+              <div className={styles.checkbox}>
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  id="checkbox_1"
+                  checked
+                />
+                <label className={styles.checkbox_text_1} htmlFor="checkbox">
+                  Buyer 1
+                </label>
+              </div>
+            </article>
+          </section>
+          <button className={styles.button}>Submit</button>
         </section>
       </div>
     </>
