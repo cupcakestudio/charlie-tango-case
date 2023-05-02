@@ -10,7 +10,6 @@ export default async function handler(req, res) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("data from DB ", data);
       res.status(200).json({ data });
     });
 }

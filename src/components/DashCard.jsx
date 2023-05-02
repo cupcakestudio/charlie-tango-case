@@ -1,6 +1,7 @@
 import styles from "src/pages/Home.module.css";
 import { useEffect } from "react";
 export function DashCard(props) {
+  console.log("buyers  " ,props.buyers)
   return (
     <>
       <section className={styles.card}>
@@ -15,7 +16,7 @@ export function DashCard(props) {
                 <p>E-mail: {props.email}</p>
                 <p>Phone: {props.phone}</p>
                 {/* if seller has checked "#consent checkbox" display yes, else no */}
-                <p>Consent to be contacted: </p> <span>{props.consent ? "Yes": "No"}</span>
+                <p>Consent to be contacted:  <span>{props.consent ? "YES": "NO"}</span></p>
 
             </div>
        
@@ -24,6 +25,7 @@ export function DashCard(props) {
                 <p>Price: {props.price}</p>
                 <p>Size: {props.size}</p>
                 <p>Zip code: {props.zipCode}</p>
+                <p>Selected Potenial Buyers </p> <ul> {props.buyers.map(obj =><li key={obj.id}>{obj.id}</li>)}</ul>
             </div>
         </div>
 

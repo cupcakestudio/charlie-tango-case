@@ -17,7 +17,7 @@ export default function DashBoard() {
      })
     .then((res) => res.json())
     .then((formdata) => {
-      console.log("this is info form db", formdata,)
+     
       // roden af dataen vi får ud fra supabase, er et objekt med property 'data', som har et array, som bliver sat til setSellerEDCContact
       setSellerEDCContact(formdata.data)
       
