@@ -1,6 +1,7 @@
 import styles from "src/pages/Home.module.css";
 import { BuyerCard } from "./BuyerCard";
 import { useEffect, useState } from "react";
+import { Dashboard } from "./dashboard";
 export function PotentialBuyers(props) {
   const [potentialBuyer, setpotentialBuyer] = useState([]);
 
@@ -15,6 +16,8 @@ export function PotentialBuyers(props) {
         console.log(data);
       });
   }, [props.sellerData]);
+
+
 
   return (
     <>
@@ -45,6 +48,7 @@ export function PotentialBuyers(props) {
           </div>
         </section>
       </div>
+      <Dashboard></Dashboard>
     </>
   );
 }
