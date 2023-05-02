@@ -73,7 +73,7 @@ export function FormInput(props) {
                 required
               />
             </label>
-            <label htmlFor="zipCode">
+            <label className={styles.display} htmlFor="zipCode">
               Zip code
               <input
                 name="zipCode"

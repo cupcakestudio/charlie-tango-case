@@ -30,7 +30,7 @@
   /* max-width: 100%; */
   justify-items: center;
 }
-#display {
+.display {
   font-size: 3rem;
 }
 
