@@ -3,23 +3,27 @@ import { DashCard } from "src/components/DashCard.jsx";
 import { useState, useEffect } from "react";
 export default function DashBoard() {
 
-  const [SellerEDCContact, setSellerEDCContact] = useState(null);
- useEffect(() => {
+  const [sellerEDCContact, setSellerEDCContact] = useState([]);
+ 
+  //fetch Seller form data from supabase
+  useEffect(() => {
 
-      // fetcher api med props og læser state data (sellerData)
-       fetch('/api/getSupabaseData', {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-       })
-      .then((res) => res.json())
-      .then((data) => {
-        // setSellerEDCContact(data);
-        console.log(data);
-      })
-  }, []
-  )
+    // fetcher api med props og læser state data (sellerData) gennem api getSupabaseData
+     fetch('/api/getSupabaseData', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+     })
+    .then((res) => res.json())
+    .then((formdata) => {
+      console.log("this is info form db", formdata,)
+      // roden af dataen vi får ud fra supabase, er et objekt med property 'data', som har et array, som bliver sat til setSellerEDCContact
+      setSellerEDCContact(formdata.data)
+      
+    })
+}, []
+ )
 
   return (
     <>
@@ -27,18 +31,19 @@ export default function DashBoard() {
       <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
-            <p>amount of contacts: X</p>
+            <p>amount of contacts: </p>
             <div className={styles.potential_grid}>
-              <div className={styles.potential_cards}>
-                <DashCard />
+             {/* sellerEDCContact bliver sat til staten af formdata som bliver hentet fra DB */}
+            {sellerEDCContact.map((formInfo) => (
+                // mapper info 
+                <div className={styles.potential_cards} key={formInfo.id}>
+                  <DashCard {...formInfo} />
+                </div>
+              ))}
+
+           
               </div>
-              <div className={styles.potential_cards}>
-                <DashCard />
-              </div>
-              <div className={styles.potential_cards}>
-                <DashCard />
-              </div>
-            </div>
+             
           </div>
         </section>
       </div>
