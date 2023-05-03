@@ -39,7 +39,7 @@ html {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--blue);
 }
 
 body {
@@ -54,7 +54,7 @@ body {
   margin: 0 auto;
   margin-bottom: 6rem;
 }
-.wrapper{
+.wrapper {
   max-width: 1200px;
   padding: 6px 2rem;
   margin: 0 auto;

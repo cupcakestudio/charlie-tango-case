@@ -7,7 +7,6 @@
   line-height: 1.2;
 }
 
-
 .content {
   padding: 1rem;
   background-color: var(--dusty-aqua-light);
@@ -24,7 +23,6 @@
   background-color: var(--dusty-blue-lighter);
   box-shadow: 2px 2px 8px 0px;
   max-width: 1200px;
-  padding: 1px 2rem;
   margin: 0 auto;
 }
 .form {
@@ -68,7 +66,7 @@
   cursor: pointer;
 }
 
-.button_small{
+.button_small {
   padding: 0rem !important;
   background: var(--blue);
   color: var(--white);
@@ -77,14 +75,12 @@
   height: 1.5rem !important;
   margin-left: 1rem;
   margin-top: 12px;
-
 }
 
-.button_small:hover{
+.button_small:hover {
   background: var(--hover);
   cursor: pointer;
 }
-
 
 .back_next {
   background: none;
@@ -113,7 +109,7 @@
 }
 
 .potential_cards {
-  width: 20rem;
+  min-width: 20rem;
   background-color: white;
   height: 100%;
 }
@@ -131,11 +127,11 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding: 1rem;
 }
 
 .card div {
   text-align: left;
-  padding-inline: 1rem;
 }
 
 .divTakeOver {
@@ -148,7 +144,7 @@
   margin-top: auto;
   padding: 1rem;
   cursor: pointer;
-  width: 20rem;
+  min-width: 20rem;
 }
 .selectButton {
   place-content: center;
@@ -194,17 +190,18 @@
   place-self: start;
 }
 
-
 /* DashCard styling  */
 .date_delete {
   display: flex;
   place-content: space-between;
-  margin-inline: 1rem;
+
+  align-items: center;
 }
 
 .divContacts {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .contactsright {
@@ -232,7 +229,7 @@
 }
 
 /*  CONTACT  */
-.optinalByers{
+.optinalByers {
   display: flex;
   flex-direction: row;
 }
@@ -244,7 +241,7 @@
 
 .checkbox_square {
   display: flex;
-  margin-block:1rem;
+  margin-block: 1rem;
 }
 
 .checkbox_square input {
@@ -256,8 +253,7 @@
 }
 
 @media (min-width: 640px) {
-
- /* BACKGROUND BOKSE */
+  /* BACKGROUND BOKSE */
   .formBackground {
     background-color: var(--dusty-blue-lighter);
     box-shadow: 2px 2px 8px 0px;
@@ -265,7 +261,7 @@
     width: 60rem;
     margin: 0 auto;
   }
-  .wrapper{
+  .wrapper {
     max-width: 60rem;
   }
 
@@ -276,7 +272,6 @@
     font-size: 1rem;
     margin-left: 20rem;
   }
-  
 
   /* YOUR ESTATE */
   .size_zip {
@@ -290,7 +285,6 @@
     margin-bottom: 0;
   }
 
-  
   /* POTENTIAL BUYERS */
   .potentialWrapper {
     max-width: 60rem;
@@ -304,9 +298,9 @@
   /* THANK YOU  */
   .thankYouSection {
     width: 60rem;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
-  
+
   .thankYouText {
     text-align: center;
     font-size: 2rem;
@@ -316,58 +310,56 @@
     text-align: center;
     padding-block: 5%;
   }
-  
-  
 
   /* CONTACT SIDE */
-.contactForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+  .contactForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
-/* kolonnerne */
-.contact_left,
-.contact_right {
-  width: 20rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+  /* kolonnerne */
+  .contact_left,
+  .contact_right {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
 
-.contact_right {
-  margin-left: 3rem;
-}
+  .contact_right {
+    margin-left: 3rem;
+  }
 
-.optinalByers{
-  display: flex;
-  flex-direction: row;
-}
+  .optinalByers {
+    display: flex;
+    flex-direction: row;
+  }
 
-.checkbox input {
-  width: 20px;
-  justify-content: start;
-  display: grid;
-  place-self: start;
-}
+  .checkbox input {
+    width: 20px;
+    justify-content: start;
+    display: grid;
+    place-self: start;
+  }
 
-.checkbox {
-  display: flex;
-  flex-direction: column;
-}
-.checkbox_square {
-  display: flex;
-}
-.checkbox_square input {
-  width: 25px;
-  justify-content: start;
-  display: grid;
-  place-self: start;
-  margin-inline-end: 1rem;
-}
+  .checkbox {
+    display: flex;
+    flex-direction: column;
+  }
+  .checkbox_square {
+    display: flex;
+  }
+  .checkbox_square input {
+    width: 25px;
+    justify-content: start;
+    display: grid;
+    place-self: start;
+    margin-inline-end: 1rem;
+  }
 
-.contact_h2 {
-  text-align: center;
-}
+  .contact_h2 {
+    text-align: center;
+  }
 }
