@@ -13,7 +13,7 @@ export function Landingpage(props) {
             Hos os bestemmer du selv, hvordan du vil sælge. Du kan vælge mellem
             flere forskellige løsninger, afhængig af hvor meget du selv vil stå
             for, og hvor meget vi skal tage os af. I de fleste af vores butikker
-            har du også mulighed for at vælge 'Solgt eller gratis'.
+            har du også mulighed for at vælge Solgt eller gratis.
           </p>
           <button
             className={styles.button}
