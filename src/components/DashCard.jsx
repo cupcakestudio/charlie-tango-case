@@ -1,25 +1,31 @@
 import styles from "src/pages/Home.module.css";
-export function DashCard() {
+import { useEffect } from "react";
+export function DashCard(props) {
+  console.log("buyers  " ,props.buyers)
   return (
     <>
       <section className={styles.card}>
         <div className={styles.date_delete}>
-          <p>Date:</p>
+          <p>Date: {props.inserted_at}</p>
           <button>Delete</button>
         </div>
 
         <div className={styles.divContacts}>
             <div className="contactsLeft">
-                <p>Name:</p>
-                <p>E-mail:</p>
-                <p>Phone:</p>
+                <p>Name: {props.fullname}</p>
+                <p>E-mail: <span><a href="mailto:{props.email}">{props.email}</a></span></p>
+                <p>Phone: <span><a href="tel:{props.phone}">{props.phone}</a></span></p>
+                {/* if seller has checked "#consent checkbox" display yes, else no */}
+                <p>Consent to be contacted:  <span>{props.consent ? "YES": "NO"}</span></p>
+
             </div>
        
             <div className="contactsright">
-                <p>Estate:</p>
-                <p>Price:</p>
-                <p>Size:</p>
-                <p>Zip code:</p>
+                <p>Estate: {props.estateType}</p>
+                <p>Price: {props.price}</p>
+                <p>Size: {props.size}</p>
+                <p>Zip code: {props.zipCode}</p>
+                <p>Selected Potenial Buyers </p> <ul> {props.buyers.map(obj =><li key={obj.id}>{obj.id}</li>)}</ul>
             </div>
         </div>
 
