@@ -1,4 +1,4 @@
-import { DashBoard } from "@/components/DashBoard";
+import DashBoard from "@/components/DashBoard";
 import { DashCard } from "@/components/DashCard";
 import styles from "src/pages/Home.module.css";
 
