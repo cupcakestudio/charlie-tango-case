@@ -34,16 +34,12 @@ export default function Home() {
   function handleBack() {
     if (page === "yourEstate") {
       setPage("landing");
-      setStep(1);
     } else if (page === "potentialBuyerView") {
       setPage("yourEstate");
-      setStep(2);
     } else if (page === "contactEDC") {
       setPage("potentialBuyerView");
-      setStep(3);
     } else if (page === "thankyou") {
       setPage("contactEDC");
-      setStep(4);
     }
   }
 

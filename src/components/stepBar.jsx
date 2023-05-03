@@ -4,7 +4,6 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Typography from "@mui/material/Typography";
-import { setHttpClientAndAgentOptions } from "next/dist/server/config";
 
 const steps = ["Your estate", "Potential buyes", "Get in touch", "thank you"];
 
@@ -12,11 +11,8 @@ export default function HorizontalLinearStepper({ activeStep }) {
   const [skipped, setSkipped] = React.useState(new Set());
   const isStepOptional = (step) => {
     return step === 1;
-
   };
- 
 
-  
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
