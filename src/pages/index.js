@@ -14,19 +14,19 @@ export default function Home() {
   const [sellerData, setSellerData] = useState({
     buyers: [],
   });
-
+  const [step, setStep] = useState(4);
   //function der returnerer på hver pagenav menuens værdier
   function getActive() {
-    if (page === "landing") {
+    if (page === "yourEstate") {
       return 0;
     }
-    if (page === "yourEstate") {
+    if (page === "potentialBuyerView") {
       return 1;
     }
-    if (page === "potentialBuyerView") {
+    if (page === "contactEDC") {
       return 2;
     }
-    if (page === "contactEDC") {
+    if (page === "thankYou") {
       return 3;
     }
   }
@@ -34,12 +34,16 @@ export default function Home() {
   function handleBack() {
     if (page === "yourEstate") {
       setPage("landing");
+      setStep(1);
     } else if (page === "potentialBuyerView") {
       setPage("yourEstate");
+      setStep(2);
     } else if (page === "contactEDC") {
       setPage("potentialBuyerView");
+      setStep(3);
     } else if (page === "thankyou") {
       setPage("contactEDC");
+      setStep(4);
     }
   }
 
