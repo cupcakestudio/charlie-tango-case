@@ -6,7 +6,7 @@ import StepBar from "src/components/stepBar.jsx";
 
 export function Header() {
   return (
-    <header className="wrapper">
+    <header className="wrapper_header">
       <Link href="/" aria-label="EDC">
         <Image
           className={styles.logo}

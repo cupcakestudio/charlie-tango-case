@@ -7,6 +7,7 @@
   line-height: 1.2;
 }
 
+
 .content {
   padding: 1rem;
   background-color: var(--dusty-aqua-light);
@@ -22,13 +23,16 @@
 .formBackground {
   background-color: var(--dusty-blue-lighter);
   box-shadow: 2px 2px 8px 0px;
-  padding: 4rem;
+  max-width: 1200px;
+  padding: 1px 2rem;
+  margin: 0 auto;
 }
 .form {
   display: grid;
   gap: 1rem;
   /* max-width: 100%; */
   justify-items: center;
+  padding: 3rem;
 }
 .form label {
   display: grid;
@@ -64,18 +68,15 @@
   cursor: pointer;
 }
 
-.back_next_buttons {
-  display: flex;
-  place-content: space-between;
-  margin-inline: 30px;
-}
 
-.button_back_next {
+.back_next {
   background: none;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
+  margin-left: 3rem;
+  margin-top: 2.5rem;
 }
-.button_back_next:hover {
+.back_next:hover {
   cursor: pointer;
   color: black;
 }
@@ -87,8 +88,8 @@
 
 .potential_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 1rem;
   place-items: center;
   grid-auto-rows: max-content;
   margin-block: 3rem;
@@ -108,7 +109,6 @@
 }
 
 /* BUYER CARD  */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -127,7 +127,6 @@
 /* .divEstateInfo {
   margin-bottom: 2rem;
 } */
-
 .card button {
   margin-top: auto;
   padding: 1rem;
@@ -236,22 +235,32 @@
 }
 
 /* ThankYou styling  */
-
 .thankYouSection {
-  padding: 20rem;
-  margin-top: -12%;
+  padding: 25px;
+  margin-top: 0%;
 }
 
 .thankYouText {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
-.button_thankYou {
-  text-align: center;
-}
 
 @media (min-width: 640px) {
+
+ /* ALL */
+  .formBackground {
+    background-color: var(--dusty-blue-lighter);
+    box-shadow: 2px 2px 8px 0px;
+    padding: 4rem;
+    width: 60rem;
+    margin: 0 auto;
+  }
+  .wrapper{
+    max-width: 60rem;
+  }
+
+
   /* YOUR ESTATE */
   .size_zip {
     display: flex;
@@ -264,24 +273,38 @@
     margin-bottom: 0;
   }
 
+  
   /* POTENTIAL BUYERS */
+  .potentialWrapper {
+    max-width: 60rem;
+  }
 
   .potential_container {
     text-align: center;
   }
 
-  /* POTENTIAL BUYERS */
-
-  .potential_container {
-    text-align: center;
+  /* ThANK YOU  */
+  .thankYouSection {
+    width: 60rem;
+    margin: 0 auto;
+   
   }
-}
-.thankYouSection {
-  padding: 25px;
-  margin-top: 0%;
-}
+  
+  .thankYouText {
+    text-align: center;
+    font-size: 2rem;
+  }
 
-.thankYouText {
-  text-align: center;
-  font-size: 1rem;
+  .button_thankYou {
+    text-align: center;
+    padding-block: 5%;
+  }
+  
+  
+  .back_next {
+    background: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    margin-left: 20rem;
+  }
 }
