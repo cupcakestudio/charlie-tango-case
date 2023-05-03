@@ -30,20 +30,13 @@
   /* max-width: 100%; */
   justify-items: center;
 }
-.display {
-  font-size: 3rem;
+.form label {
+  display: grid;
 }
 
 .form input {
   width: 20rem;
   padding: 1rem;
-}
-
-.form input:focus + .form.label {
-  color: hotpink;
-  font-size: 0.5rem;
-  top: -25px;
-  pointer-events: none;
 }
 
 .form .textbox {
