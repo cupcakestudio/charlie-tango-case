@@ -27,7 +27,7 @@ export default function DashBoard() {
       <div className={styles.potentialWrapper}>
         <section className={styles.formBackground}>
           <div className={styles.potential_container}>
-            <p>amount of contacts: </p>
+            <p>amount of contacts: {sellerEDCContact.length} </p>
             <div className={styles.potential_grid}>
               {/* sellerEDCContact bliver sat til staten af formdata som bliver hentet fra DB */}
               {sellerEDCContact.map((formInfo) => (

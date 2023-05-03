@@ -27,10 +27,9 @@
 }
 .form {
   display: grid;
-  gap: 1rem;
-  /* max-width: 100%; */
-  justify-items: center;
+  grid-gap: 1rem;
   padding: 3rem;
+  place-content: center;
 }
 .form label {
   display: grid;
@@ -218,6 +217,12 @@
 }
 
 /* THANK YPOU STYLING  */
+.grid_thankyou {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .thankYouSection {
   padding: 25px;
   margin-top: 0%;
@@ -232,6 +237,8 @@
 .optinalByers {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  place-items: center;
 }
 
 .checkbox {
@@ -250,6 +257,13 @@
   display: grid;
   place-self: start;
   margin-inline-end: 1rem;
+}
+
+/* thank you btn */
+.button_thankYou {
+  display: grid;
+  place-content: center;
+  margin: 2rem;
 }
 
 @media (min-width: 640px) {
