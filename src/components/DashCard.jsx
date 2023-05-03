@@ -6,7 +6,7 @@ export function DashCard(props) {
     <>
       <section className={styles.card}>
         <div className={styles.date_delete}>
-          <p>Date: {props.received_at}</p>
+          <p>Date: {props.inserted_at}</p>
           <button>Delete</button>
         </div>
 
