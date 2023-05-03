@@ -7,6 +7,7 @@
   line-height: 1.2;
 }
 
+
 .content {
   padding: 1rem;
   background-color: var(--dusty-aqua-light);
@@ -22,13 +23,16 @@
 .formBackground {
   background-color: var(--dusty-blue-lighter);
   box-shadow: 2px 2px 8px 0px;
-  padding: 4rem;
+  max-width: 1200px;
+  padding: 1px 2rem;
+  margin: 0 auto;
 }
 .form {
   display: grid;
   gap: 1rem;
   /* max-width: 100%; */
   justify-items: center;
+  padding: 3rem;
 }
 .form label {
   display: grid;
@@ -64,18 +68,32 @@
   cursor: pointer;
 }
 
-.back_next_buttons {
-  display: flex;
-  place-content: space-between;
-  margin-inline: 30px;
+.button_small{
+  padding: 0rem !important;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 2rem;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  margin-left: 1rem;
+  margin-top: 12px;
+
 }
 
-.button_back_next {
+.button_small:hover{
+  background: var(--hover);
+  cursor: pointer;
+}
+
+
+.back_next {
   background: none;
   color: rgba(0, 0, 0, 0.6);
   font-size: 1rem;
+  margin-left: 3rem;
+  margin-top: 2.5rem;
 }
-.button_back_next:hover {
+.back_next:hover {
   cursor: pointer;
   color: black;
 }
@@ -87,8 +105,8 @@
 
 .potential_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 1rem;
   place-items: center;
   grid-auto-rows: max-content;
   margin-block: 3rem;
@@ -108,7 +126,6 @@
 }
 
 /* BUYER CARD  */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -127,7 +144,6 @@
 /* .divEstateInfo {
   margin-bottom: 2rem;
 } */
-
 .card button {
   margin-top: auto;
   padding: 1rem;
@@ -177,38 +193,7 @@
   display: grid;
   place-self: start;
 }
-/* STYLING AF CONTACT SIDE */
-/* styling af kolonner */
-.checkbox_left,
-.checkbox_right {
-  width: 20rem;
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
 
-.contact_right {
-  margin-left: 3rem;
-}
-
-.checkbox input {
-  width: 20px;
-  justify-content: start;
-  display: grid;
-  place-self: start;
-}
-
-.checkbox {
-  display: flex;
-}
-.contactForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.contact_h2 {
-  text-align: center;
-}
 
 /* DashCard styling  */
 .date_delete {
@@ -235,23 +220,64 @@
   margin-bottom: 1rem;
 }
 
-/* ThankYou styling  */
-
+/* THANK YPOU STYLING  */
 .thankYouSection {
-  padding: 20rem;
-  margin-top: -12%;
+  padding: 25px;
+  margin-top: 0%;
 }
 
 .thankYouText {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
-.button_thankYou {
-  text-align: center;
+/*  CONTACT  */
+.optinalByers{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox_square {
+  display: flex;
+  margin-block:1rem;
+}
+
+.checkbox_square input {
+  width: 25px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+  margin-inline-end: 1rem;
 }
 
 @media (min-width: 640px) {
+
+ /* BACKGROUND BOKSE */
+  .formBackground {
+    background-color: var(--dusty-blue-lighter);
+    box-shadow: 2px 2px 8px 0px;
+    padding: 4rem;
+    width: 60rem;
+    margin: 0 auto;
+  }
+  .wrapper{
+    max-width: 60rem;
+  }
+
+  /* "BACK" KNAP I STEPBAR  */
+  .back_next {
+    background: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    margin-left: 20rem;
+  }
+  
+
   /* YOUR ESTATE */
   .size_zip {
     display: flex;
@@ -264,24 +290,84 @@
     margin-bottom: 0;
   }
 
+  
   /* POTENTIAL BUYERS */
+  .potentialWrapper {
+    max-width: 60rem;
+    padding: 0rem;
+  }
 
   .potential_container {
     text-align: center;
   }
 
-  /* POTENTIAL BUYERS */
-
-  .potential_container {
-    text-align: center;
+  /* THANK YOU  */
+  .thankYouSection {
+    width: 60rem;
+    margin: 0 auto; 
   }
-}
-.thankYouSection {
-  padding: 25px;
-  margin-top: 0%;
+  
+  .thankYouText {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .button_thankYou {
+    text-align: center;
+    padding-block: 5%;
+  }
+  
+  
+
+  /* CONTACT SIDE */
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.thankYouText {
+/* kolonnerne */
+.contact_left,
+.contact_right {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact_right {
+  margin-left: 3rem;
+}
+
+.optinalByers{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox input {
+  width: 20px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox_square {
+  display: flex;
+}
+.checkbox_square input {
+  width: 25px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+  margin-inline-end: 1rem;
+}
+
+.contact_h2 {
   text-align: center;
-  font-size: 1rem;
+}
 }

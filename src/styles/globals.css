@@ -48,9 +48,15 @@ body {
   color: var(--blue);
 }
 
-.wrapper {
+.wrapper_header {
   max-width: 800px;
   padding: 0 1rem;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+.wrapper{
+  max-width: 1200px;
+  padding: 6px 2rem;
   margin: 0 auto;
   margin-bottom: 6rem;
 }
