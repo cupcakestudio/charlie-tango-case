@@ -1,5 +1,4 @@
 import styles from "@/pages/Home.module.css";
-import HorizontalLinearStepper from "src/components/stepBar.jsx";
 import AnImage from "src/components/AnImage.jsx";
 export function Landingpage(props) {
   return (
