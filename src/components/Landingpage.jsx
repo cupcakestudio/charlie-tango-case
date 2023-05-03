@@ -1,10 +1,11 @@
 import styles from "@/pages/Home.module.css";
-import HorizontalLinearStepper from "src/components/stepBar.jsx";
+import AnImage from "src/components/AnImage.jsx";
 export function Landingpage(props) {
   return (
-    
     <section>
-      <header className="header_landing"></header>
+      <header className="header_landing">
+        <AnImage></AnImage>
+      </header>
       <main className="main_landing">
         <div className="grid_col">
           <h2>Find potential buyers for your property</h2>
@@ -17,7 +18,9 @@ export function Landingpage(props) {
           <button
             className={styles.button}
             /* props henter indholdet ind til component og sætter page til et nyt state */
-            onClick={() => {props.setPage("yourEstate");}}
+            onClick={() => {
+              props.setPage("yourEstate");
+            }}
           >
             Find a buyer
           </button>
@@ -33,8 +36,5 @@ export function Landingpage(props) {
         </div>
       </main>
     </section>
- 
   );
 }
-
- 

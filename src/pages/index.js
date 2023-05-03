@@ -48,12 +48,15 @@ export default function Home() {
       <Head>
         <title>Find buyer | EDC</title>
       </Head>
-      <StepBar activeStep={getActive()} />
-      <div className={styles.back_next_buttons}>
-        <button className={styles.button_back_next} onClick={handleBack}>
-          Back{" "}
-        </button>
-      </div>
+      {/* gør at stepbar og back knap ikke vises på landingpage */}
+      {page !== "landing" && <StepBar activeStep={getActive()} />}
+      {page !== "landing" && (
+        <div className={styles.back_next_buttons}>
+          <button className={styles.button_back_next} onClick={handleBack}>
+            Back
+          </button>
+        </div>
+      )}
       {page === "landing" ? <Landingpage setPage={setPage} /> : null}
       {page === "yourEstate" ? (
         <FormCard setPage={setPage} setSellerData={setSellerData} />
