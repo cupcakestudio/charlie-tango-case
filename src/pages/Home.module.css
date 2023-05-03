@@ -68,6 +68,23 @@
   cursor: pointer;
 }
 
+.button_small{
+  padding: 0rem !important;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 2rem;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  margin-left: 1rem;
+  margin-top: 12px;
+
+}
+
+.button_small:hover{
+  background: var(--hover);
+  cursor: pointer;
+}
+
 
 .back_next {
   background: none;
@@ -176,38 +193,7 @@
   display: grid;
   place-self: start;
 }
-/* STYLING AF CONTACT SIDE */
-/* styling af kolonner */
-.checkbox_left,
-.checkbox_right {
-  width: 20rem;
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
 
-.contact_right {
-  margin-left: 3rem;
-}
-
-.checkbox input {
-  width: 20px;
-  justify-content: start;
-  display: grid;
-  place-self: start;
-}
-
-.checkbox {
-  display: flex;
-}
-.contactForm {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.contact_h2 {
-  text-align: center;
-}
 
 /* DashCard styling  */
 .date_delete {
@@ -234,7 +220,7 @@
   margin-bottom: 1rem;
 }
 
-/* ThankYou styling  */
+/* THANK YPOU STYLING  */
 .thankYouSection {
   padding: 25px;
   margin-top: 0%;
@@ -245,10 +231,33 @@
   font-size: 1rem;
 }
 
+/*  CONTACT  */
+.optinalByers{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox_square {
+  display: flex;
+  margin-block:1rem;
+}
+
+.checkbox_square input {
+  width: 25px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+  margin-inline-end: 1rem;
+}
 
 @media (min-width: 640px) {
 
- /* ALL */
+ /* BACKGROUND BOKSE */
   .formBackground {
     background-color: var(--dusty-blue-lighter);
     box-shadow: 2px 2px 8px 0px;
@@ -260,6 +269,14 @@
     max-width: 60rem;
   }
 
+  /* "BACK" KNAP I STEPBAR  */
+  .back_next {
+    background: none;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    margin-left: 20rem;
+  }
+  
 
   /* YOUR ESTATE */
   .size_zip {
@@ -277,17 +294,17 @@
   /* POTENTIAL BUYERS */
   .potentialWrapper {
     max-width: 60rem;
+    padding: 0rem;
   }
 
   .potential_container {
     text-align: center;
   }
 
-  /* ThANK YOU  */
+  /* THANK YOU  */
   .thankYouSection {
     width: 60rem;
-    margin: 0 auto;
-   
+    margin: 0 auto; 
   }
   
   .thankYouText {
@@ -301,10 +318,56 @@
   }
   
   
-  .back_next {
-    background: none;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1rem;
-    margin-left: 20rem;
-  }
+
+  /* CONTACT SIDE */
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* kolonnerne */
+.contact_left,
+.contact_right {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact_right {
+  margin-left: 3rem;
+}
+
+.optinalByers{
+  display: flex;
+  flex-direction: row;
+}
+
+.checkbox input {
+  width: 20px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox_square {
+  display: flex;
+}
+.checkbox_square input {
+  width: 25px;
+  justify-content: start;
+  display: grid;
+  place-self: start;
+  margin-inline-end: 1rem;
+}
+
+.contact_h2 {
+  text-align: center;
+}
 }

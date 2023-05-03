@@ -3,9 +3,22 @@ import styles from "src/pages/Home.module.css";
 
 import { useState, useEffect, useRef } from "react";
 
+
+
 export default function ContactForm(props) {
   //const to get form, using ref to hook up the form
   const formEl = useRef(null);
+
+  function removeBuyer(id) {
+    props.sellerData((prev) => {
+      if (prev.buyers.find((obj) => obj.id === id)) {
+        return {
+          ...prev,
+          buyers: prev.buyers.filter((obj) => obj.id !== id),
+        };
+      }
+    });
+  }
 
   function submitToDB(e) {
     e.preventDefault();
@@ -45,6 +58,8 @@ export default function ContactForm(props) {
   function changePage() {
     props.setPage("thankyou");
   }
+
+ 
   return (
     <>
       <Head>
@@ -54,74 +69,78 @@ export default function ContactForm(props) {
         <h1 className={styles.headline}>Form Input</h1>
         {/*  redirects to new div */}
         <section className={styles.formBackground}>
-          <section className={styles.contactForm}>
-            <form
-              className={styles.form}
-              action="#"
-              method="GET"
-              id="Contact"
-              ref={formEl}
-              onSubmit={submitToDB}
-            >
-              <article className={styles.contact_right}>
-                <h2 className={styles.contact_h2}>Chosen buyers</h2>
-                <div className={styles.checkbox}>
-                  {props.sellerData.buyers.map((buyer) => (
-                    <>
-                      <p key={buyer.id}>{buyer.id}</p>
-                      <button>X</button>
-                    </>
-                  ))}
-                </div>
-              </article>
+        
+              <form
+                  className={styles.form}
+                  action="#"
+                  method="GET"
+                  id="Contact"
+                  ref={formEl}
+                  onSubmit={submitToDB}
+              >
+                  <section className={styles.contactForm}>
+                  <article className={styles.contact_left}>
+                                      <h2 className={styles.contact_h2}>Contact info</h2>
 
-              <article className={styles.contact_left}>
-                <h2 className={styles.contact_h2}>Contact info</h2>
+                        <label className={styles.label} htmlFor="Name">
+                          <input name="Name" id="name" placeholder="Name" required />
+                        </label>
 
-                <label className={styles.label} htmlFor="Name">
-                  <input name="Name" id="name" placeholder="Name" required />
-                </label>
-                <label htmlFor="Email">
-                  <input
-                    name="Email"
-                    type="email"
-                    placeholder="Email"
-                    id="email"
-                    required
-                  />
-                </label>
+                        <label htmlFor="Email">
+                          <input
+                            name="Email"
+                            type="email"
+                            placeholder="Email"
+                            id="email"
+                            required
+                          />
+                        </label>
 
-                <label htmlFor="Phone">
-                  <input
-                    className={styles.size}
-                    name="Phone"
-                    id="phone"
-                    placeholder="Phone"
-                    required
-                  />
-                </label>
-                <label htmlFor="Address">
-                  <input
-                    className={styles.label}
-                    name="Address"
-                    id="address"
-                    placeholder="Address"
-                    required
-                  />
-                </label>
+                        <label htmlFor="Phone">
+                          <input
+                            className={styles.size}
+                            name="Phone"
+                            id="phone"
+                            placeholder="Phone"
+                            required
+                          />
+                        </label>
+                        <label htmlFor="Address">
+                          <input
+                            className={styles.label}
+                            name="Address"
+                            id="address"
+                            placeholder="Address"
+                            required
+                          />
+                        </label>
 
-                <div className={styles.checkbox}>
-                  <input type="checkbox" className="checkbox" id="consent" />
-                  <label className="checkbox" htmlFor="checkbox">
-                    Yes please, EDC may contact me with offers and information
-                    related to the realestate market.
-                  </label>
-                </div>
-              </article>
+                        <div className={styles.checkbox_square}>
+                          <input type="checkbox" className="checkbox" id="consent" />
+                            <label className="checkbox" htmlFor="checkbox">
+                              Yes please, EDC may contact me with offers and information
+                              related to the realestate market.
+                            </label>
+                        </div>
+                
+                  </article>
 
-              <button className={styles.button}>Submit</button>
-            </form>
-          </section>
+                  <article className={styles.contact_right}>
+                          <h2 className={styles.contact_h2}>Chosen buyers</h2>
+                            <div className={styles.checkbox}>
+                              {props.sellerData.buyers.map((buyer) => (
+                                <>
+                                <div className={styles.optinalByers}>
+                                  <p key={buyer.id}>{buyer.id}</p>
+                                  <div className={styles.button_small} onClick={() => removeBuyer(buyer.id)}>x</div>
+                                  </div>
+                                </>
+                              ))}
+                            </div>        
+                </article>
+                <button className={styles.button}>Submit</button>
+                </section>
+              </form>
         </section>
       </div>
     </>
