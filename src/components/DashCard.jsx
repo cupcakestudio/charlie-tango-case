@@ -13,8 +13,8 @@ export function DashCard(props) {
         <div className={styles.divContacts}>
             <div className="contactsLeft">
                 <p>Name: {props.fullname}</p>
-                <p>E-mail: {props.email}</p>
-                <p>Phone: {props.phone}</p>
+                <p>E-mail: <span><a href="mailto:{props.email}">{props.email}</a></span></p>
+                <p>Phone: <span><a href="tel:{props.phone}">{props.phone}</a></span></p>
                 {/* if seller has checked "#consent checkbox" display yes, else no */}
                 <p>Consent to be contacted:  <span>{props.consent ? "YES": "NO"}</span></p>
 
