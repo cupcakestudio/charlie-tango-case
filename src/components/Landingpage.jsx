@@ -10,10 +10,10 @@ export function Landingpage(props) {
         <div className="grid_col">
           <h2>Find potential buyers for your property</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            aliquam vero ea voluptate unde corrupti natus laboriosam error quae
-            at maiores dolorum incidunt, expedita nisi aut inventore ducimus
-            fugiat quaerat.
+            Hos os bestemmer du selv, hvordan du vil sælge. Du kan vælge mellem
+            flere forskellige løsninger, afhængig af hvor meget du selv vil stå
+            for, og hvor meget vi skal tage os af. I de fleste af vores butikker
+            har du også mulighed for at vælge Solgt eller gratis.
           </p>
           <button
             className={styles.button}
@@ -28,10 +28,10 @@ export function Landingpage(props) {
         <div className="grid_col2">
           <h2>Criterias for finding buyers</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-            accusantium labore odit, maiores asperiores nemo iusto nihil quam
-            distinctio doloribus officia saepe facilis totam ab et reiciendis
-            dolore veritatis ullam!
+            Som sælger får du adgang til Mit EDC, så du kan følge dit boligsalg
+            på nettet, når du har lyst. Så kan du i løbet af processen nemt få
+            overblik over de mange forskellige aktiviteter vedrørende salget af
+            din bolig - også inden, den officielt er sat til salg.
           </p>
         </div>
       </main>

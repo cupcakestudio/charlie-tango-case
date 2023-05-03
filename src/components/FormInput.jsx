@@ -89,6 +89,7 @@ export function FormInput(props) {
             </label>
           </div>
           <label htmlFor="Specifications">
+            Specifications
             <textarea
               className={styles.textbox}
               name="specifications"

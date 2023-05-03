@@ -9,7 +9,7 @@ export function PotentialBuyers(props) {
     if (props.sellerData) {
       fetch(
         // fetcher api med props og læser state data (sellerData)
-        `http://localhost:3000/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
+        `https://charlie-tango-case-git-main-cupcakestudio.vercel.app/api/find-buyers?price=${props.sellerData.price}&estateType=${props.sellerData.estateType}&size=${props.sellerData.size}&zipCode=${props.sellerData.zipCode}&specifications=${props.sellerData.specifications}`
       )
         .then((res) => res.json())
         .then((data) => {
